@@ -363,7 +363,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
 
@@ -371,6 +371,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(1.15) contrast(1.05); /* Boosts brightness and contrast for enhanced clarity */
 }
 
 /* Slider Controls */
