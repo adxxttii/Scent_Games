@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Scent Games - Premium Fragrance Collection. Internationally formulated solid perfumes and Extraits de Parfum. Masterfully crafted, exceptionally long lasting, cruelty-free.">
+  <meta name="keywords"
+    content="Scent Games, perfume, solid perfume, luxury fragrance, Extrait de Parfum, unisex perfume, cruelty-free scent">
+  <meta name="author" content="Scent Games">
+
+  <title>Scent Games | Premium Fragrance Collection</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png"
+    href="https://scentgames.in/cdn/shop/files/Favicon.png?crop=center&height=32&v=1773319005&width=32">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Material Symbols Outlined -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ── ANNOUNCEMENT BAR ─────────────────────────────────────────────────── -->
+  <div class="announcement-bar">
+    <div class="announcement-marquee">
+      Welcome to The Game Of Scents &nbsp;&nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;&nbsp; Free delivery on prepaid orders
+      &nbsp;&nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;&nbsp; Shop our Solid Perfumes and Extraits de Parfum now!
+    </div>
+  </div>
+
+  <!-- ── HEADER ───────────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container header-container">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+      <div class="logo">
+        <a href="#home">
+          <img src="https://scentgames.in/cdn/shop/files/LOGO_1.png?v=1768311142" alt="Scent Games Logo"
+            class="logo-img">
+          Scent Games
+        </a>
+      </div>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#bundle" class="nav-link">Deals</a></li>
+          <li><a href="#bundle" class="nav-link">Buy More, Save More</a></li>
+          <li><a href="#collections" class="nav-link">Collections</a></li>
+          <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+          <li><a href="#stories" class="nav-link">Our Stories</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="header-action-btn" id="search-btn" aria-label="Search">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <button class="header-action-btn" id="cart-open-btn" aria-label="Open Cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-count-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="MainContent">
+
+    <!-- ── HERO SECTION ───────────────────────────────────────────────────── -->
+    <!-- <section class="hero-slider" id="home">
+      <!-- Slide 1 
+      <div class="hero-slide active">
+        <div class="hero-image-container">
+          Desktop Image 
+          <img src="https://scentgames.in/cdn/shop/files/hand_desktop.jpg?v=1771329452&width=3840"
+            alt="Scent Games Premium Collection Desktop" class="mobile-hidden">
+           Mobile Image 
+          <img src="https://scentgames.in/cdn/shop/files/hand.jpg?v=1771329228&width=3840"
+            alt="Scent Games Premium Collection Mobile" class="desktop-hidden">
+        </div>
+        <div class="hero-content">
+          <h2>Premium Fragrance Collection</h2>
+          <p>Internationally formulated. Masterfully crafted. Exceptionally long lasting.</p>
+          <a href="#bundle" class="hero-btn">Shop Now</a>
+        </div>
+      </div>
+    </section> -->
+    <section class="hero-slider" id="home">
+
+      <!-- Slide 1 : Blue Drip -->
+      <div class="hero-slide active">
+        <div class="hero-video-container">
+          <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Scent_Games(BlueDrip)commercial.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="hero-content">
+          <!-- <h2>Blue Drip</h2>
+          <p>Fresh. Aquatic. Powerful.</p> -->
+          <!-- <a href="#bundle" class="hero-btn">Shop Now</a> -->
+        </div>
+      </div>
+
+      <!-- Slide 2 : Lush Muse -->
+      <div class="hero-slide">
+        <div class="hero-video-container">
+          <video class="hero-video" autoplay muted loop playsinline>
+            <source src="lush muse.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="hero-content">
+          <!-- <h2>Lush Muse</h2>
+          <p>Elegant. Feminine. Luxurious.</p> -->
+          <!-- <a href="#bundle" class="hero-btn">Shop Now</a> -->
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <button class="hero-nav-btn hero-nav-btn--prev" id="hero-prev-btn" aria-label="Previous Slide">‹</button>
+      <button class="hero-nav-btn hero-nav-btn--next" id="hero-next-btn" aria-label="Next Slide">›</button>
+
+      <!-- Dots Indicators -->
+      <div class="hero-dots" id="hero-dots-container">
+        <span class="hero-dot active" data-slide="0"></span>
+        <span class="hero-dot" data-slide="1"></span>
+      </div>
+
+    </section>
+
+    <!-- ── FEATURED PRODUCTS SECTION ──────────────────────────────────────── -->
+    <section class="products-section section" id="featured-products">
+      <div class="container">
+        <h2 class="section-title">Our Best <span class="title-highlight">Sellers</span></h2>
+
+        <div class="products-grid">
+
+          <!-- Product 1: Blue Drip -->
+          <div class="product-card" data-product-id="single-blue-drip">
+            <div class="product-card__img-wrap">
+              <img src="https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440"
+                alt="Blue Drip Extrait De Parfum">
+            </div>
+            <div class="product-card__details">
+              <div class="product-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.8</span>
+                <span class="rating-count">(112 reviews)</span>
+              </div>
+              <h3 class="product-card__title">Blue Drip Extrait De Parfum</h3>
+              <p class="product-card__subtitle">Unisex · Masterfully Crafted · 50ml</p>
+              <div class="product-card__price-row">
+                <span class="price-current">₹849</span>
+                <span class="price-original">₹1,499</span>
+                <span class="price-discount">43% OFF</span>
+              </div>
+              <button type="button" class="product-card__add-btn" data-id="single-blue-drip"
+                data-title="Blue Drip Extrait De Parfum - 50ml" data-price="849"
+                data-img="https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 2: Lush Muse -->
+          <div class="product-card" data-product-id="single-lush-muse">
+            <div class="product-card__img-wrap">
+              <img src="https://scentgames.in/cdn/shop/files/55_400x400_crop_center.jpg?v=1777812439"
+                alt="Lush Muse Extrait De Parfum">
+            </div>
+            <div class="product-card__details">
+              <div class="product-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.7</span>
+                <span class="rating-count">(94 reviews)</span>
+              </div>
+              <h3 class="product-card__title">Lush Muse Extrait De Parfum</h3>
+              <p class="product-card__subtitle">For Her · Fresh & Woody · 50ml</p>
+              <div class="product-card__price-row">
+                <span class="price-current">₹899</span>
+                <span class="price-original">₹1,499</span>
+                <span class="price-discount">40% OFF</span>
+              </div>
+              <button type="button" class="product-card__add-btn" data-id="single-lush-muse"
+                data-title="LUSH MUSE Extrait De Parfum For Her - 50ml" data-price="899"
+                data-img="https://scentgames.in/cdn/shop/files/55_400x400_crop_center.jpg?v=1777812439">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 3: Rouge Fantasy -->
+          <div class="product-card" data-product-id="single-rouge-fantasy">
+            <div class="product-card__img-wrap">
+              <img src="https://scentgames.in/cdn/shop/files/48_400x400_crop_center.jpg?v=1777812073"
+                alt="Rouge Fantasy Extrait De Parfum">
+            </div>
+            <div class="product-card__details">
+              <div class="product-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.9</span>
+                <span class="rating-count">(156 reviews)</span>
+              </div>
+              <h3 class="product-card__title">Rouge Fantasy Extrait De Parfum</h3>
+              <p class="product-card__subtitle">Unisex · Intense Floral · 50ml</p>
+              <div class="product-card__price-row">
+                <span class="price-current">₹849</span>
+                <span class="price-original">₹1,499</span>
+                <span class="price-discount">43% OFF</span>
+              </div>
+              <button type="button" class="product-card__add-btn" data-id="single-rouge-fantasy"
+                data-title="Rouge Fantasy Extrait De Parfum for Unisex – 50ml" data-price="849"
+                data-img="https://scentgames.in/cdn/shop/files/48_400x400_crop_center.jpg?v=1777812073">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 4: Rich AF -->
+          <div class="product-card" data-product-id="single-rich-af">
+            <div class="product-card__img-wrap">
+              <img src="https://scentgames.in/cdn/shop/files/69_400x400_crop_center.jpg?v=1777812440"
+                alt="Rich AF Extrait De Parfum">
+            </div>
+            <div class="product-card__details">
+              <div class="product-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.8</span>
+                <span class="rating-count">(124 reviews)</span>
+              </div>
+              <h3 class="product-card__title">Rich AF Extrait De Parfum</h3>
+              <p class="product-card__subtitle">For Him · Bold Citrus · 50ml</p>
+              <div class="product-card__price-row">
+                <span class="price-current">₹849</span>
+                <span class="price-original">₹1,499</span>
+                <span class="price-discount">43% OFF</span>
+              </div>
+              <button type="button" class="product-card__add-btn" data-id="single-rich-af"
+                data-title="Rich AF Extrait De Parfum for Him - 50ml" data-price="849"
+                data-img="https://scentgames.in/cdn/shop/files/69_400x400_crop_center.jpg?v=1777812440">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURES SECTION ───────────────────────────────────────────────── -->
+    <section class="features-section">
+      <div class="container">
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-item">
+            <div class="feature-img-wrapper">
+              <img src="https://scentgames.in/cdn/shop/files/Screenshot_2026-02-21_at_5.55.55_PM.png?v=1771676771"
+                alt="Cruelty Free logo">
+            </div>
+            <h3 class="feature-title">Cruelty Free</h3>
+            <p class="feature-desc">Proudly Cruelty-Free.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="feature-item">
+            <div class="feature-img-wrapper">
+              <img src="https://scentgames.in/cdn/shop/files/Screenshot_2026-02-21_at_5.57.42_PM.png?v=1771676888"
+                alt="Fragrance Forward logo">
+            </div>
+            <h3 class="feature-title">Fragrance Forward</h3>
+            <p class="feature-desc">Imported Oils. Luxurious Fragrance.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="feature-item">
+            <div class="feature-img-wrapper">
+              <img
+                src="https://scentgames.in/cdn/shop/files/affordability-sign-icon-wallet-logo-cash-savings-symbol-premium-quality-graphic-design-elements-modern-signs-linear-pictograms-objects-filled-symbols-simple-thick-lines-icon-vector.jpg?v=1771677050"
+                alt="Affordable Luxury logo">
+            </div>
+            <h3 class="feature-title">Affordable Luxury</h3>
+            <p class="feature-desc">Premium Quality. Sensibly Priced.</p>
+          </div>
+          <!-- Feature 4 -->
+          <div class="feature-item">
+            <div class="feature-img-wrapper">
+              <img src="https://scentgames.in/cdn/shop/files/Screenshot_2026-02-21_at_6.12.40_PM.png?v=1771677776"
+                alt="Gender Neutral logo">
+            </div>
+            <h3 class="feature-title">Gender Neutral</h3>
+            <p class="feature-desc">Self-Care for Every Body.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CRAZY DEALS SECTION ────────────────────────────────────────────── -->
+    <section class="deals-section" id="deals">
+      <!-- Endless Horizontal Marquee Ticker -->
+      <div class="deals-ticker">
+        <div class="deals-ticker__track">
+          <span>Crazy Deals Alert: Prices Gone Wild!</span>
+          <span>Crazy Deals. Zero Chill on Prices</span>
+          <span>Crazy Deals Alert: Prices Gone Wild!</span>
+          <span>Crazy Deals. Zero Chill on Prices</span>
+          <span>Crazy Deals Alert: Prices Gone Wild!</span>
+          <span>Crazy Deals. Zero Chill on Prices</span>
+          <span>Crazy Deals Alert: Prices Gone Wild!</span>
+          <span>Crazy Deals. Zero Chill on Prices</span>
+          <span>Crazy Deals Alert: Prices Gone Wild!</span>
+          <span>Crazy Deals. Zero Chill on Prices</span>
+          <span>Crazy Deals Alert: Prices Gone Wild!</span>
+          <span>Crazy Deals. Zero Chill on Prices</span>
+        </div>
+      </div>
+
+      <!-- Carousel Cards -->
+      <div class="deals-carousel-wrap">
+        <button class="deals-nav-btn deals-nav-btn--prev" aria-label="Previous Deal">‹</button>
+        <div class="deals-carousel">
+
+          <!-- Card 1: Solid Perfume -->
+          <a href="#collections" class="deals-card">
+            <div class="deals-card__img-wrap">
+              <img
+                src="https://scentgames.in/cdn/shop/files/2_86bc3cbd-1ece-49d7-a30e-6081ee94cf53.jpg?v=1773328886&width=1500"
+                alt="Solid Perfume Solid Prices">
+            </div>
+            <div class="deals-card__info deals-card__info--tan">
+              <div class="deals-card__text">
+                <h3 class="deals-card__title">Solid Perfume Solid Prices</h3>
+                <p class="deals-card__desc">Solid Perfume</p>
+              </div>
+              <button type="button" class="deals-card__btn">View</button>
+            </div>
+          </a>
+
+          <!-- Card 2: Buy More Save More -->
+          <a href="javascript:void(0)" class="deals-card" data-deal-type="him">
+            <div class="deals-card__img-wrap">
+              <img
+                src="https://scentgames.in/cdn/shop/files/25_9dd87511-30dc-478f-825f-17b93e47f117.jpg?v=1779894970&width=1500"
+                alt="Buy More Save More">
+            </div>
+            <div class="deals-card__info deals-card__info--blue">
+              <div class="deals-card__text">
+                <h3 class="deals-card__title">Buy More Save More</h3>
+                <p class="deals-card__desc">Perfumes</p>
+              </div>
+              <button type="button" class="deals-card__btn">View</button>
+            </div>
+          </a>
+
+          <!-- Card 3: Extrait De Parfum (Him) -->
+          <a href="javascript:void(0)" class="deals-card" data-deal-type="him">
+            <div class="deals-card__img-wrap">
+              <img
+                src="https://scentgames.in/cdn/shop/files/3_4a2d2ff5-5e8d-4fc6-800d-5f5bb8a2f97a.jpg?v=1773328886&width=1500"
+                alt="Extrait De Parfum For Him">
+            </div>
+            <div class="deals-card__info deals-card__info--maroon">
+              <div class="deals-card__text">
+                <h3 class="deals-card__title">Extrait De Parfum</h3>
+                <p class="deals-card__desc">For Him</p>
+              </div>
+              <button type="button" class="deals-card__btn">View</button>
+            </div>
+          </a>
+
+          <!-- Card 4: Extrait De Parfum (Her) -->
+          <a href="javascript:void(0)" class="deals-card" data-deal-type="her">
+            <div class="deals-card__img-wrap">
+              <img
+                src="https://scentgames.in/cdn/shop/files/4_3b6a6d84-bb17-4a90-ba22-2c6df979716a.jpg?v=1773328886&width=1500"
+                alt="Extrait De Parfum For Her">
+            </div>
+            <div class="deals-card__info deals-card__info--mauve">
+              <div class="deals-card__text">
+                <h3 class="deals-card__title">Extrait De Parfum</h3>
+                <p class="deals-card__desc">for Her</p>
+              </div>
+              <button type="button" class="deals-card__btn">View</button>
+            </div>
+          </a>
+
+        </div>
+        <button class="deals-nav-btn deals-nav-btn--next" aria-label="Next Deal">›</button>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ── FORMULATED WORLDWIDE SECTION ─────────────────────────────────────── -->
+    <section class="formulated-section section">
+      <div class="container">
+        <h2 class="section-title">Formulated <span class="title-highlight">Worldwide</span></h2>
+        <div class="formulated-grid">
+          <!-- Country 1 -->
+          <div class="formulated-item">
+            <div class="formulated-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor">
+                <path
+                  d="M 25 1.9199219 C 12.265113 1.9199219 1.9199219 12.265113 1.9199219 25 C 1.9199219 37.734887 12.265113 48.080078 25 48.080078 C 37.734887 48.080078 48.080078 37.734887 48.080078 25 C 48.080078 12.265113 37.734887 1.9199219 25 1.9199219 z M 24 4.0371094 L 24 13.970703 C 21.43251 13.91011 18.991445 13.623022 16.740234 13.152344 C 17.136627 11.9515 17.587103 10.835559 18.087891 9.8339844 C 19.740825 6.5281156 21.837286 4.5160498 24 4.0371094 z M 26 4.0371094 C 28.162714 4.5160498 30.259175 6.5281156 31.912109 9.8339844 C 32.414496 10.838757 32.866379 11.958806 33.263672 13.164062 C 31.015269 13.630037 28.5709 13.911377 26 13.970703 L 26 4.0371094 z M 19.171875 4.7402344 C 18.086481 5.8772845 17.118637 7.2998344 16.298828 8.9394531 C 15.727502 10.082106 15.226366 11.34271 14.789062 12.6875 C 12.825936 12.158279 11.050587 11.492361 9.5175781 10.71875 C 12.097501 7.9227151 15.411073 5.8180109 19.171875 4.7402344 z M 30.828125 4.7402344 C 34.585289 5.8169681 37.895737 7.9189636 40.474609 10.710938 C 38.96425 11.498668 37.190868 12.172098 35.216797 12.703125 C 34.778353 11.352409 34.274712 10.086534 33.701172 8.9394531 C 32.881363 7.2998344 31.913519 5.8772845 30.828125 4.7402344 z M 41.783203 12.273438 C 44.280319 15.563254 45.849591 19.596544 46.054688 24 L 37.013672 24 C 36.940686 20.642697 36.511581 17.472843 35.777344 14.632812 C 38.021162 14.025788 40.043564 13.230357 41.783203 12.273438 z M 8.2050781 12.289062 C 9.9635362 13.222752 11.989301 14.00879 14.226562 14.615234 C 13.489633 17.459671 13.059462 20.635904 12.986328 24 L 3.9453125 24 C 4.1500856 19.603485 5.7148727 15.576078 8.2050781 12.289062 z M 16.175781 15.085938 C 18.608124 15.603479 21.237145 15.911692 24 15.972656 L 24 24 L 14.986328 24 C 15.060725 20.787369 15.480743 17.762271 16.175781 15.085938 z M 33.828125 15.099609 C 34.521088 17.7726 34.939401 20.792796 35.013672 24 L 26 24 L 26 15.972656 C 28.764457 15.913393 31.396477 15.612271 33.828125 15.099609 z M 3.9453125 26 L 12.986328 26 C 13.059314 29.357303 13.488419 32.527156 14.222656 35.367188 C 11.978838 35.974212 9.9564363 36.769643 8.2167969 37.726562 C 5.7196806 34.436746 4.1504088 30.403456 3.9453125 26 z M 14.986328 26 L 24 26 L 24 34.027344 C 21.235543 34.086607 18.603523 34.387729 16.171875 34.900391 C 15.478912 32.2274 15.060599 29.207204 14.986328 26 z M 26 26 L 35.013672 26 C 34.939275 29.212631 34.519257 32.237729 33.824219 34.914062 C 31.391876 34.396521 28.762855 34.088308 26 34.027344 L 26 26 z M 37.013672 26 L 46.054688 26 C 45.849914 30.396515 44.285127 34.423922 41.794922 37.710938 C 40.036464 36.777248 38.010699 35.99121 35.773438 35.384766 C 36.510367 32.540329 36.940538 29.364096 37.013672 26 z M 24 36.029297 L 24 45.962891 C 21.837286 45.48395 19.740825 43.471884 18.087891 40.166016 C 17.585504 39.161243 17.133621 38.041194 16.736328 36.835938 C 18.984731 36.369963 21.4291 36.088623 24 36.029297 z M 26 36.029297 C 28.56749 36.08989 31.008555 36.376978 33.259766 36.847656 C 32.863373 38.0485 32.412897 39.16444 31.912109 40.166016 C 30.259175 43.471884 28.162714 45.48395 26 45.962891 L 26 36.029297 z M 14.783203 37.296875 C 15.221647 38.647591 15.725288 39.913466 16.298828 41.060547 C 17.118637 42.700166 18.086481 44.122716 19.171875 45.259766 C 15.414711 44.183032 12.104263 42.081036 9.5253906 39.289062 C 11.03575 38.501332 12.809132 37.827902 14.783203 37.296875 z M 35.210938 37.3125 C 37.174064 37.841721 38.949413 38.507639 40.482422 39.28125 C 37.902499 42.077285 34.588927 44.181989 30.828125 45.259766 C 31.913519 44.122716 32.881363 42.700166 33.701172 41.060547 C 34.272498 39.917894 34.773634 38.65729 35.210938 37.3125 z" />
+              </svg>
+            </div>
+            <span class="formulated-name">France</span>
+          </div>
+          <!-- Country 2 -->
+          <div class="formulated-item">
+            <div class="formulated-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor">
+                <path
+                  d="M 25 1.9199219 C 12.265113 1.9199219 1.9199219 12.265113 1.9199219 25 C 1.9199219 37.734887 12.265113 48.080078 25 48.080078 C 37.734887 48.080078 48.080078 37.734887 48.080078 25 C 48.080078 12.265113 37.734887 1.9199219 25 1.9199219 z M 24 4.0371094 L 24 13.970703 C 21.43251 13.91011 18.991445 13.623022 16.740234 13.152344 C 17.136627 11.9515 17.587103 10.835559 18.087891 9.8339844 C 19.740825 6.5281156 21.837286 4.5160498 24 4.0371094 z M 26 4.0371094 C 28.162714 4.5160498 30.259175 6.5281156 31.912109 9.8339844 C 32.414496 10.838757 32.866379 11.958806 33.263672 13.164062 C 31.015269 13.630037 28.5709 13.911377 26 13.970703 L 26 4.0371094 z M 19.171875 4.7402344 C 18.086481 5.8772845 17.118637 7.2998344 16.298828 8.9394531 C 15.727502 10.082106 15.226366 11.34271 14.789062 12.6875 C 12.825936 12.158279 11.050587 11.492361 9.5175781 10.71875 C 12.097501 7.9227151 15.411073 5.8180109 19.171875 4.7402344 z M 30.828125 4.7402344 C 34.585289 5.8169681 37.895737 7.9189636 40.474609 10.710938 C 38.96425 11.498668 37.190868 12.172098 35.216797 12.703125 C 34.778353 11.352409 34.274712 10.086534 33.701172 8.9394531 C 32.881363 7.2998344 31.913519 5.8772845 30.828125 4.7402344 z M 41.783203 12.273438 C 44.280319 15.563254 45.849591 19.596544 46.054688 24 L 37.013672 24 C 36.940686 20.642697 36.511581 17.472843 35.777344 14.632812 C 38.021162 14.025788 40.043564 13.230357 41.783203 12.273438 z M 8.2050781 12.289062 C 9.9635362 13.222752 11.989301 14.00879 14.226562 14.615234 C 13.489633 17.459671 13.059462 20.635904 12.986328 24 L 3.9453125 24 C 4.1500856 19.603485 5.7148727 15.576078 8.2050781 12.289062 z M 16.175781 15.085938 C 18.608124 15.603479 21.237145 15.911692 24 15.972656 L 24 24 L 14.986328 24 C 15.060725 20.787369 15.480743 17.762271 16.175781 15.085938 z M 33.828125 15.099609 C 34.521088 17.7726 34.939401 20.792796 35.013672 24 L 26 24 L 26 15.972656 C 28.764457 15.913393 31.396477 15.612271 33.828125 15.099609 z M 3.9453125 26 L 12.986328 26 C 13.059314 29.357303 13.488419 32.527156 14.222656 35.367188 C 11.978838 35.974212 9.9564363 36.769643 8.2167969 37.726562 C 5.7196806 34.436746 4.1504088 30.403456 3.9453125 26 z M 14.986328 26 L 24 26 L 24 34.027344 C 21.235543 34.086607 18.603523 34.387729 16.171875 34.900391 C 15.478912 32.2274 15.060599 29.207204 14.986328 26 z M 26 26 L 35.013672 26 C 34.939275 29.212631 34.519257 32.237729 33.824219 34.914062 C 31.391876 34.396521 28.762855 34.088308 26 34.027344 L 26 26 z M 37.013672 26 L 46.054688 26 C 45.849914 30.396515 44.285127 34.423922 41.794922 37.710938 C 40.036464 36.777248 38.010699 35.99121 35.773438 35.384766 C 36.510367 32.540329 36.940538 29.364096 37.013672 26 z M 24 36.029297 L 24 45.962891 C 21.837286 45.48395 19.740825 43.471884 18.087891 40.166016 C 17.585504 39.161243 17.133621 38.041194 16.736328 36.835938 C 18.984731 36.369963 21.4291 36.088623 24 36.029297 z M 26 36.029297 C 28.56749 36.08989 31.008555 36.376978 33.259766 36.847656 C 32.863373 38.0485 32.412897 39.16444 31.912109 40.166016 C 30.259175 43.471884 28.162714 45.48395 26 45.962891 L 26 36.029297 z M 14.783203 37.296875 C 15.221647 38.647591 15.725288 39.913466 16.298828 41.060547 C 17.118637 42.700166 18.086481 44.122716 19.171875 45.259766 C 15.414711 44.183032 12.104263 42.081036 9.5253906 39.289062 C 11.03575 38.501332 12.809132 37.827902 14.783203 37.296875 z M 35.210938 37.3125 C 37.174064 37.841721 38.949413 38.507639 40.482422 39.28125 C 37.902499 42.077285 34.588927 44.181989 30.828125 45.259766 C 31.913519 44.122716 32.881363 42.700166 33.701172 41.060547 C 34.272498 39.917894 34.773634 38.65729 35.210938 37.3125 z" />
+              </svg>
+            </div>
+            <!-- Typography spelling mistake fixed here (Itley -> Italy) -->
+            <span class="formulated-name">Italy</span>
+          </div>
+          <!-- Country 3 -->
+          <div class="formulated-item">
+            <div class="formulated-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor">
+                <path
+                  d="M 25 1.9199219 C 12.265113 1.9199219 1.9199219 12.265113 1.9199219 25 C 1.9199219 37.734887 12.265113 48.080078 25 48.080078 C 37.734887 48.080078 48.080078 37.734887 48.080078 25 C 48.080078 12.265113 37.734887 1.9199219 25 1.9199219 z M 24 4.0371094 L 24 13.970703 C 21.43251 13.91011 18.991445 13.623022 16.740234 13.152344 C 17.136627 11.9515 17.587103 10.835559 18.087891 9.8339844 C 19.740825 6.5281156 21.837286 4.5160498 24 4.0371094 z M 26 4.0371094 C 28.162714 4.5160498 30.259175 6.5281156 31.912109 9.8339844 C 32.414496 10.838757 32.866379 11.958806 33.263672 13.164062 C 31.015269 13.630037 28.5709 13.911377 26 13.970703 L 26 4.0371094 z M 19.171875 4.7402344 C 18.086481 5.8772845 17.118637 7.2998344 16.298828 8.9394531 C 15.727502 10.082106 15.226366 11.34271 14.789062 12.6875 C 12.825936 12.158279 11.050587 11.492361 9.5175781 10.71875 C 12.097501 7.9227151 15.411073 5.8180109 19.171875 4.7402344 z M 30.828125 4.7402344 C 34.585289 5.8169681 37.895737 7.9189636 40.474609 10.710938 C 38.96425 11.498668 37.190868 12.172098 35.216797 12.703125 C 34.778353 11.352409 34.274712 10.086534 33.701172 8.9394531 C 32.881363 7.2998344 31.913519 5.8772845 30.828125 4.7402344 z M 41.783203 12.273438 C 44.280319 15.563254 45.849591 19.596544 46.054688 24 L 37.013672 24 C 36.940686 20.642697 36.511581 17.472843 35.777344 14.632812 C 38.021162 14.025788 40.043564 13.230357 41.783203 12.273438 z M 8.2050781 12.289062 C 9.9635362 13.222752 11.989301 14.00879 14.226562 14.615234 C 13.489633 17.459671 13.059462 20.635904 12.986328 24 L 3.9453125 24 C 4.1500856 19.603485 5.7148727 15.576078 8.2050781 12.289062 z M 16.175781 15.085938 C 18.608124 15.603479 21.237145 15.911692 24 15.972656 L 24 24 L 14.986328 24 C 15.060725 20.787369 15.480743 17.762271 16.175781 15.085938 z M 33.828125 15.099609 C 34.521088 17.7726 34.939401 20.792796 35.013672 24 L 26 24 L 26 15.972656 C 28.764457 15.913393 31.396477 15.612271 33.828125 15.099609 z M 3.9453125 26 L 12.986328 26 C 13.059314 29.357303 13.488419 32.527156 14.222656 35.367188 C 11.978838 35.974212 9.9564363 36.769643 8.2167969 37.726562 C 5.7196806 34.436746 4.1504088 30.403456 3.9453125 26 z M 14.986328 26 L 24 26 L 24 34.027344 C 21.235543 34.086607 18.603523 34.387729 16.171875 34.900391 C 15.478912 32.2274 15.060599 29.207204 14.986328 26 z M 26 26 L 35.013672 26 C 34.939275 29.212631 34.519257 32.237729 33.824219 34.914062 C 31.391876 34.396521 28.762855 34.088308 26 34.027344 L 26 26 z M 37.013672 26 L 46.054688 26 C 45.849914 30.396515 44.285127 34.423922 41.794922 37.710938 C 40.036464 36.777248 38.010699 35.99121 35.773438 35.384766 C 36.510367 32.540329 36.940538 29.364096 37.013672 26 z M 24 36.029297 L 24 45.962891 C 21.837286 45.48395 19.740825 43.471884 18.087891 40.166016 C 17.585504 39.161243 17.133621 38.041194 16.736328 36.835938 C 18.984731 36.369963 21.4291 36.088623 24 36.029297 z M 26 36.029297 C 28.56749 36.08989 31.008555 36.376978 33.259766 36.847656 C 32.863373 38.0485 32.412897 39.16444 31.912109 40.166016 C 30.259175 43.471884 28.162714 45.48395 26 45.962891 L 26 36.029297 z M 14.783203 37.296875 C 15.221647 38.647591 15.725288 39.913466 16.298828 41.060547 C 17.118637 42.700166 18.086481 44.122716 19.171875 45.259766 C 15.414711 44.183032 12.104263 42.081036 9.5253906 39.289062 C 11.03575 38.501332 12.809132 37.827902 14.783203 37.296875 z M 35.210938 37.3125 C 37.174064 37.841721 38.949413 38.507639 40.482422 39.28125 C 37.902499 42.077285 34.588927 44.181989 30.828125 45.259766 C 31.913519 44.122716 32.881363 42.700166 33.701172 41.060547 C 34.272498 39.917894 34.773634 38.65729 35.210938 37.3125 z" />
+              </svg>
+            </div>
+            <span class="formulated-name">Spain</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OUR LOVE STORIES (Instagram Stories) ────────────────────────────── -->
+    <section class="stories-section section" id="stories">
+      <div class="container">
+        <h2 class="section-title">Our Love <span class="title-highlight">Stories</span></h2>
+
+        <div class="stories-carousel">
+          <!-- Abhishek -->
+          <button class="story-avatar-btn" data-index="0">
+            <div class="story-border">
+              <div class="story-img-container">
+                <img
+                  src="https://scentgames.in/cdn/shop/files/Screenshot_2026-02-17_at_6.07.13_PM.png?v=1771331852&width=200"
+                  alt="Abhishek Profile">
+              </div>
+            </div>
+            <!-- Spelling mistake fixed: Abhiskek -> Abhishek -->
+            <span class="story-name">Abhishek</span>
+          </button>
+
+          <!-- Roshni -->
+          <button class="story-avatar-btn" data-index="1">
+            <div class="story-border">
+              <div class="story-img-container">
+                <img
+                  src="https://scentgames.in/cdn/shop/files/Screenshot_2026-02-17_at_6.24.22_PM.png?v=1771332893&width=200"
+                  alt="Roshni Profile">
+              </div>
+            </div>
+            <span class="story-name">Roshni</span>
+          </button>
+
+          <!-- Khushi -->
+          <button class="story-avatar-btn" data-index="2">
+            <div class="story-border">
+              <div class="story-img-container">
+                <img
+                  src="https://scentgames.in/cdn/shop/files/Screenshot_2026-02-17_at_6.36.51_PM.png?v=1771333641&width=200"
+                  alt="Khushi Profile">
+              </div>
+            </div>
+            <span class="story-name">Khushi</span>
+          </button>
+
+          <!-- Vishal -->
+          <button class="story-avatar-btn" data-index="3">
+            <div class="story-border">
+              <div class="story-img-container">
+                <img
+                  src="https://scentgames.in/cdn/shop/files/Screenshot_2026-02-17_at_6.59.59_PM.png?v=1771335257&width=400"
+                  alt="Vishal Profile">
+              </div>
+            </div>
+            <span class="story-name">Vishal</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── COLLECTIONS SECTION ─────────────────────────────────────────────── -->
+    <section class="collections-section section" id="collections">
+      <div class="container">
+        <h2 class="section-title">Explore Our <span class="title-highlight">Collections</span></h2>
+
+        <div class="collections-grid">
+          <!-- Card For Him -->
+          <div class="collection-card" onclick="location.href='#bundle'">
+            <img class="collection-img"
+              src="https://scentgames.in/cdn/shop/collections/for_him.jpg?v=1768389228&width=1500"
+              alt="For Him Collection">
+            <div class="collection-info">
+              <h3 class="collection-name">For Him</h3>
+              <span class="collection-btn">Shop Collection</span>
+            </div>
+          </div>
+          <!-- Card Unisex -->
+          <div class="collection-card" onclick="location.href='#bundle'">
+            <img class="collection-img"
+              src="https://scentgames.in/cdn/shop/collections/fragrance-bold-2-middle.jpg?v=1768390348&width=1500"
+              alt="Unisex Collection">
+            <div class="collection-info">
+              <h3 class="collection-name">Unisex</h3>
+              <span class="collection-btn">Shop Collection</span>
+            </div>
+          </div>
+          <!-- Card For Her -->
+          <div class="collection-card" onclick="location.href='#bundle'">
+            <img class="collection-img"
+              src="https://scentgames.in/cdn/shop/collections/for_her.jpg?v=1768389307&width=1500"
+              alt="For Her Collection">
+            <div class="collection-info">
+              <h3 class="collection-name">For Her</h3>
+              <span class="collection-btn">Shop Collection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── FACEBOOK TESTIMONIALS SECTION ───────────────────────────────────── -->
+    <section class="testimonials-section section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">What People <span class="title-highlight">Are Saying</span></h2>
+
+        <div class="testimonials-grid">
+          <!-- Card Deepika -->
+          <div class="fb-testimonial-card">
+            <div class="fb-post-header">
+              <div class="fb-author-avatar">D</div>
+              <div class="fb-author-details">
+                <h4 class="fb-author-name">Deepika</h4>
+                <span class="fb-post-time">2h ago</span>
+              </div>
+              <div class="fb-post-options">•••</div>
+            </div>
+            <p class="fb-post-body">✨ Lush Muse is a refreshing yet elegant fragrance. Smooth, long-lasting finish. ✨
+            </p>
+            <div class="fb-post-reactions">
+              <div class="fb-reaction-icons">
+                <span class="fb-reaction-badge fb-reaction-badge--love">❤</span>
+                <span class="fb-reaction-badge fb-reaction-badge--like">👍</span>
+                <span>1.1k</span>
+              </div>
+              <span class="fb-post-stats">26 Comments</span>
+            </div>
+            <div class="fb-action-buttons">
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">thumb_up</span> Like</button>
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">chat_bubble</span> Comment</button>
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">share</span> Share</button>
+            </div>
+          </div>
+
+          <!-- Card Shivam -->
+          <div class="fb-testimonial-card">
+            <div class="fb-post-header">
+              <div class="fb-author-avatar">S</div>
+              <div class="fb-author-details">
+                <h4 class="fb-author-name">Shivam</h4>
+                <span class="fb-post-time">3h ago</span>
+              </div>
+              <div class="fb-post-options">•••</div>
+            </div>
+            <p class="fb-post-body">Blue Drip is a fresh, aquatic fragrance with a cool, energizing vibe that instantly
+              refreshes the senses. 🔥</p>
+            <div class="fb-post-reactions">
+              <div class="fb-reaction-icons">
+                <span class="fb-reaction-badge fb-reaction-badge--love">❤</span>
+                <span class="fb-reaction-badge fb-reaction-badge--like">👍</span>
+                <span>1.1k</span>
+              </div>
+              <span class="fb-post-stats">26 Comments</span>
+            </div>
+            <div class="fb-action-buttons">
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">thumb_up</span> Like</button>
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">chat_bubble</span> Comment</button>
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">share</span> Share</button>
+            </div>
+          </div>
+
+          <!-- Card Aditi -->
+          <div class="fb-testimonial-card">
+            <div class="fb-post-header">
+              <div class="fb-author-avatar">A</div>
+              <div class="fb-author-details">
+                <h4 class="fb-author-name">Aditi</h4>
+                <span class="fb-post-time">2h ago</span>
+              </div>
+              <div class="fb-post-options">•••</div>
+            </div>
+            <p class="fb-post-body">Sweet yet sophisticated, it's perfect for those who love comforting luxury in every
+              spray. 🤍✨</p>
+            <div class="fb-post-reactions">
+              <div class="fb-reaction-icons">
+                <span class="fb-reaction-badge fb-reaction-badge--love">❤</span>
+                <span class="fb-reaction-badge fb-reaction-badge--like">👍</span>
+                <span>1.1k</span>
+              </div>
+              <span class="fb-post-stats">26 Comments</span>
+            </div>
+            <div class="fb-action-buttons">
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">thumb_up</span> Like</button>
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">chat_bubble</span> Comment</button>
+              <button class="fb-action-btn"><span class="material-symbols-outlined"
+                  style="font-size: 1.6rem;">share</span> Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── CART DRAWER MODAL ────────────────────────────────────────────────── -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Shopping Bag</h3>
+      <button class="cart-drawer-close" id="cart-drawer-close">✕</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-body">
+      <!-- Injected dynamically by index.js -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span class="cart-summary-total" id="cart-subtotal">₹0</span>
+      </div>
+      <button class="cart-checkout-btn" id="cart-checkout-btn" disabled>Check Out</button>
+    </div>
+  </div>
+
+  <!-- ── INSTAGRAM STORIES VIEW MODAL ─────────────────────────────────────── -->
+  <div class="stories-modal" id="stories-modal">
+    <button class="story-modal-close" id="story-close-btn">✕</button>
+
+    <div class="story-modal-container">
+
+      <!-- Timeline progress ticks -->
+      <div class="story-modal-overlay">
+        <div>
+          <div class="story-progress-bar-container" id="story-progress-container">
+            <!-- Dynamic progress bars -->
+          </div>
+          <div class="story-modal-header">
+            <div class="story-author-info">
+              <div class="story-author-img">
+                <img id="story-author-img" src="" alt="">
+              </div>
+              <span class="story-author-name" id="story-author-name"></span>
+            </div>
+            <div class="story-controls">
+              <button class="story-control-btn" id="story-play-pause-btn">⏸</button>
+              <button class="story-control-btn" id="story-mute-btn">🔊</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Invisible tap targets for navigation -->
+      <div class="story-nav-zone story-nav-zone--prev" id="story-nav-prev"></div>
+      <div class="story-nav-zone story-nav-zone--next" id="story-nav-next"></div>
+
+      <!-- Video media player -->
+      <div class="story-modal-media-wrapper">
+        <video id="story-video" playsinline webkit-playsinline></video>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── FLOATING SCROLL TO TOP BUTTON ────────────────────────────────────── -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+  <!-- ── SITE FOOTER ──────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1 -->
+      <div class="footer-brand">
+        <h2>Scent Games</h2>
+        <p>Premium fragrance destination for solid perfumes and Extraits de Parfum. Experience masterfully formulated
+          luxury scents tailored for all body self-care.</p>
+        <div class="footer-social-links">
+          <a href="https://facebook.com/ownthemoment" target="_blank" rel="noopener" class="footer-social-icon"
+            aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
+            </svg>
+          </a>
+          <!-- Link corrected from social.scentgames to proper Scent Games Instagram handle -->
+          <a href="https://www.instagram.com/social.scentgames/" target="_blank" rel="noopener"
+            class="footer-social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+            </svg>
+          </a>
+          <!-- Replaced default shopify placeholder with clean custom channel links -->
+          <a href="https://pinterest.com/scentgames" target="_blank" rel="noopener" class="footer-social-icon"
+            aria-label="Pinterest">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.41 7.61 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.907 2.17-2.907 1.025 0 1.522.771 1.522 1.697 0 1.03-.656 2.576-.996 4.009-.282 1.199.599 2.176 1.777 2.176 2.133 0 3.771-2.254 3.771-5.509 0-2.881-2.07-4.896-5.029-4.896-3.425 0-5.437 2.569-5.437 5.226 0 1.034.398 2.143.896 2.746.098.12.112.224.083.339-.09.378-.293 1.196-.332 1.357-.052.211-.172.256-.398.15-1.493-.695-2.427-2.874-2.427-4.631 0-3.773 2.742-7.237 7.901-7.237 4.148 0 7.37 2.956 7.37 6.903 0 4.122-2.599 7.44-6.208 7.44-1.213 0-2.353-.63-2.744-1.372l-.747 2.844c-.269 1.028-1.002 2.318-1.494 3.119C9.77 23.882 10.875 24 12.017 24c6.621 0 11.983-5.367 11.983-11.987C24 5.367 18.638 0 12.017 0z" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@ScentGames" target="_blank" rel="noopener" class="footer-social-icon"
+            aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.5 12 3.5 12 3.5s-7.518 0-9.388.553a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.553 9.388.553 9.388.553s7.518 0 9.388-.553a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- Col 2 -->
+      <div class="footer-col">
+        <h3>Information</h3>
+        <ul class="footer-links">
+          <li><a href="#bundle">Search</a></li>
+          <li><a href="#home">Terms & Conditions</a></li>
+          <li><a href="#home">Privacy Policy</a></li>
+          <li><a href="#home">Refund and Return</a></li>
+          <li><a href="#" onclick="openShippingModal(event)">Shipping Policy</a></li>
+        </ul>
+      </div>
+      <!-- Col 3 -->
+      <div class="footer-col">
+        <h3>Support</h3>
+        <ul class="footer-links">
+          <li><a href="#home">About Us</a></li>
+          <li><a href="#home">Contact Us</a></li>
+          <li><a href="#collections">All Products</a></li>
+        </ul>
+      </div>
+      <!-- Col 4 -->
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="footer-links">
+          <li class="footer-contact-item">
+            <span class="material-symbols-outlined">phone_in_talk</span>
+            <span>+91-9278451118<br><span style="font-size: 1.1rem; color: #888;">Mon - Sat (10am - 6pm)</span></span>
+          </li>
+          <li class="footer-contact-item">
+            <span class="material-symbols-outlined">mail</span>
+            <span>support@scentgames.in</span>
+          </li>
+          <li>
+            <a href="https://wa.me/919278451118?text=Hi%20there!%20%F0%9F%91%8B%20Welcome%20to%20Scent%20Games.%20Need%20help%20with%20shopping%20or%20your%20order?%20We%E2%80%99ve%20got%20you%20covered."
+              target="_blank" rel="noopener" class="footer-whatsapp-btn">
+              Chat on WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Scent Games. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#home">Privacy policy</a>
+        <a href="#home">Refund policy</a>
+        <a href="#home">Terms of service</a>
+        <a href="#home">Contact information</a>
+        <a href="#" onclick="openShippingModal(event)">Shipping policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── BUNDLE BUILDER MODAL ─────────────────────────────────────────────── -->
+  <div class="bundle-modal-overlay" id="bundle-modal-overlay"></div>
+  <div class="bundle-modal" id="bundle-modal">
+    <div class="bundle-modal-content">
+      <button class="bundle-modal-close" id="bundle-modal-close" aria-label="Close Modal">✕</button>
+
+      <div class="bundle-modal-tabs">
+        <button class="bundle-tab-btn active" id="tab-btn-him" data-target="him">For Him</button>
+        <button class="bundle-tab-btn" id="tab-btn-her" data-target="her">For Her</button>
+      </div>
+
+      <div class="sg-dual__track">
+
+        <!-- Panel For Her -->
+        <div class="sg-dual__panel" id="sg-panel-her">
+          <span class="sg-dual__panel-tag sg-dual__panel-tag--her">For Her</span>
+
+          <div class="sg-bundle__top">
+            <h3 class="sg-bundle__title">Build your own bundle</h3>
+            <div class="sg-bundle__price-badge">
+              <span class="sg-bundle__price-text">Rs 1999</span>
+              <span class="sg-bundle__price-sub">any 3 picks</span>
+            </div>
+            <p class="sg-bundle__perks">Free delivery · Ships today</p>
+          </div>
+
+          <div class="sg-bundle__slots-wrap">
+            <div class="sg-bundle__slots">
+              <div class="sg-bundle__slot" data-type="her" id="slot-her-0">
+                <span class="sg-bundle__slot-placeholder">+</span>
+                <img class="sg-bundle__slot-img" src="" alt="">
+                <button type="button" class="sg-bundle__slot-remove">✕</button>
+              </div>
+              <div class="sg-bundle__conn">+</div>
+              <div class="sg-bundle__slot" data-type="her" id="slot-her-1">
+                <span class="sg-bundle__slot-placeholder">+</span>
+                <img class="sg-bundle__slot-img" src="" alt="">
+                <button type="button" class="sg-bundle__slot-remove">✕</button>
+              </div>
+              <div class="sg-bundle__conn">+</div>
+              <div class="sg-bundle__slot" data-type="her" id="slot-her-2">
+                <span class="sg-bundle__slot-placeholder">+</span>
+                <img class="sg-bundle__slot-img" src="" alt="">
+                <button type="button" class="sg-bundle__slot-remove">✕</button>
+              </div>
+            </div>
+            <p class="sg-bundle__count" id="sg-count-her">0 of 3 selected</p>
+          </div>
+
+          <div class="sg-bundle__products" id="sg-products-her">
+            <!-- Prod 1 -->
+            <div class="sg-bundle__prod" data-type="her" data-product-id="her-1"
+              data-product-title="Vanillicious Extrait De Parfum for Her - 50ml"
+              data-product-img="https://scentgames.in/cdn/shop/files/62_400x400_crop_center.jpg?v=1777812438">
+              <div class="sg-bundle__img-wrap">
+                <img src="https://scentgames.in/cdn/shop/files/62_400x400_crop_center.jpg?v=1777812438"
+                  alt="Vanillicious Extrait">
+                <div class="sg-bundle__check-badge"><svg viewBox="0 0 12 12">
+                    <polyline points="2,6 5,9 10,3"></polyline>
+                  </svg></div>
+              </div>
+              <h4 class="sg-bundle__prod-name">Vanillicious Extrait (Her)</h4>
+              <p class="sg-bundle__prod-note">Bold · Oud · Spicy</p>
+              <button type="button" class="sg-bundle__prod-add">+ Add</button>
+            </div>
+            <!-- Prod 2 -->
+            <div class="sg-bundle__prod" data-type="her" data-product-id="her-2"
+              data-product-title="LUSH MUSE Extrait De Parfum For Her - 50ml"
+              data-product-img="https://scentgames.in/cdn/shop/files/55_400x400_crop_center.jpg?v=1777812439">
+              <div class="sg-bundle__img-wrap">
+                <img src="https://scentgames.in/cdn/shop/files/55_400x400_crop_center.jpg?v=1777812439"
+                  alt="LUSH MUSE Extrait">
+                <div class="sg-bundle__check-badge"><svg viewBox="0 0 12 12">
+                    <polyline points="2,6 5,9 10,3"></polyline>
+                  </svg></div>
+              </div>
+              <h4 class="sg-bundle__prod-name">LUSH MUSE Extrait (Her)</h4>
+              <p class="sg-bundle__prod-note">Fresh · Aqua · Woody</p>
+              <button type="button" class="sg-bundle__prod-add">+ Add</button>
+            </div>
+            <!-- Prod 3 -->
+            <div class="sg-bundle__prod" data-type="her" data-product-id="her-3"
+              data-product-title="Blue Drip Extrait De Parfum for Unisex - 50ml"
+              data-product-img="https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440">
+              <div class="sg-bundle__img-wrap">
+                <img src="https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440"
+                  alt="Blue Drip Extrait">
+                <div class="sg-bundle__check-badge"><svg viewBox="0 0 12 12">
+                    <polyline points="2,6 5,9 10,3"></polyline>
+                  </svg></div>
+              </div>
+              <h4 class="sg-bundle__prod-name">Blue Drip Extrait (Unisex)</h4>
+              <p class="sg-bundle__prod-note">Sweet · Warm · Vanilla</p>
+              <button type="button" class="sg-bundle__prod-add">+ Add</button>
+            </div>
+            <!-- Prod 4 -->
+            <div class="sg-bundle__prod" data-type="her" data-product-id="her-4"
+              data-product-title="Rouge Fantasy Extrait De Parfum for Unisex – 50ml"
+              data-product-img="https://scentgames.in/cdn/shop/files/48_400x400_crop_center.jpg?v=1777812073">
+              <div class="sg-bundle__img-wrap">
+                <img src="https://scentgames.in/cdn/shop/files/48_400x400_crop_center.jpg?v=1777812073"
+                  alt="Rouge Fantasy Extrait">
+                <div class="sg-bundle__check-badge"><svg viewBox="0 0 12 12">
+                    <polyline points="2,6 5,9 10,3"></polyline>
+                  </svg></div>
+              </div>
+              <h4 class="sg-bundle__prod-name">Rouge Fantasy Extrait</h4>
+              <p class="sg-bundle__prod-note">Floral · Soft · Rosy</p>
+              <button type="button" class="sg-bundle__prod-add">+ Add</button>
+            </div>
+          </div>
+
+          <div class="sg-bundle__footer">
+            <button id="sg-cta-her" class="sg-bundle__cta sg-bundle__cta--primary" disabled>Pick 3 more to build your
+              bundle</button>
+            <a class="sg-bundle__cta sg-bundle__cta--secondary" href="#collections">View all →</a>
+          </div>
+        </div>
+
+        <!-- Panel For Him -->
+        <div class="sg-dual__panel" id="sg-panel-him">
+          <span class="sg-dual__panel-tag sg-dual__panel-tag--him">For Him</span>
+
+          <div class="sg-bundle__top">
+            <h3 class="sg-bundle__title">Build your own bundle</h3>
+            <div class="sg-bundle__price-badge">
+              <span class="sg-bundle__price-text">Rs 1999</span>
+              <span class="sg-bundle__price-sub">any 3 picks</span>
+            </div>
+            <p class="sg-bundle__perks">Free delivery · Ships today</p>
+          </div>
+
+          <div class="sg-bundle__slots-wrap">
+            <div class="sg-bundle__slots">
+              <div class="sg-bundle__slot" data-type="him" id="slot-him-0">
+                <span class="sg-bundle__slot-placeholder">+</span>
+                <img class="sg-bundle__slot-img" src="" alt="">
+                <button type="button" class="sg-bundle__slot-remove">✕</button>
+              </div>
+              <div class="sg-bundle__conn">+</div>
+              <div class="sg-bundle__slot" data-type="him" id="slot-him-1">
+                <span class="sg-bundle__slot-placeholder">+</span>
+                <img class="sg-bundle__slot-img" src="" alt="">
+                <button type="button" class="sg-bundle__slot-remove">✕</button>
+              </div>
+              <div class="sg-bundle__conn">+</div>
+              <div class="sg-bundle__slot" data-type="him" id="slot-him-2">
+                <span class="sg-bundle__slot-placeholder">+</span>
+                <img class="sg-bundle__slot-img" src="" alt="">
+                <button type="button" class="sg-bundle__slot-remove">✕</button>
+              </div>
+            </div>
+            <p class="sg-bundle__count" id="sg-count-him">0 of 3 selected</p>
+          </div>
+
+          <div class="sg-bundle__products" id="sg-products-him">
+            <!-- Prod 1 -->
+            <div class="sg-bundle__prod" data-type="him" data-product-id="him-1"
+              data-product-title="What If Extrait De Parfum for Him – 50ml"
+              data-product-img="https://scentgames.in/cdn/shop/files/41_400x400_crop_center.jpg?v=1777812439">
+              <div class="sg-bundle__img-wrap">
+                <img src="https://scentgames.in/cdn/shop/files/41_400x400_crop_center.jpg?v=1777812439"
+                  alt="What If Extrait">
+                <div class="sg-bundle__check-badge"><svg viewBox="0 0 12 12">
+                    <polyline points="2,6 5,9 10,3"></polyline>
+                  </svg></div>
+              </div>
+              <h4 class="sg-bundle__prod-name">What If Extrait (Him)</h4>
+              <p class="sg-bundle__prod-note">Bold · Woody · Oud</p>
+              <button type="button" class="sg-bundle__prod-add">+ Add</button>
+            </div>
+            <!-- Prod 2 -->
+            <div class="sg-bundle__prod" data-type="him" data-product-id="him-2"
+              data-product-title="Rich AF Extrait De Parfum for Him - 50ml"
+              data-product-img="https://scentgames.in/cdn/shop/files/69_400x400_crop_center.jpg?v=1777812440">
+              <div class="sg-bundle__img-wrap">
+                <img src="https://scentgames.in/cdn/shop/files/69_400x400_crop_center.jpg?v=1777812440"
+                  alt="Rich AF Extrait">
+                <div class="sg-bundle__check-badge"><svg viewBox="0 0 12 12">
+                    <polyline points="2,6 5,9 10,3"></polyline>
+                  </svg></div>
+              </div>
+              <h4 class="sg-bundle__prod-name">Rich AF Extrait (Him)</h4>
+              <p class="sg-bundle__prod-note">Fresh · Aqua · Citrus</p>
+              <button type="button" class="sg-bundle__prod-add">+ Add</button>
+            </div>
+            <!-- Prod 3 -->
+            <div class="sg-bundle__prod" data-type="him" data-product-id="him-3"
+              data-product-title="Blue Drip Extrait De Parfum for Unisex - 50ml"
+              data-product-img="https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440">
+              <div class="sg-bundle__img-wrap">
+                <img src="https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440"
+                  alt="Blue Drip Extrait">
+                <div class="sg-bundle__check-badge"><svg viewBox="0 0 12 12">
+                    <polyline points="2,6 5,9 10,3"></polyline>
+                  </svg></div>
+              </div>
+              <h4 class="sg-bundle__prod-name">Blue Drip Extrait (Unisex)</h4>
+              <p class="sg-bundle__prod-note">Warm · Earthy · Deep</p>
+              <button type="button" class="sg-bundle__prod-add">+ Add</button>
+            </div>
+            <!-- Prod 4 -->
+            <div class="sg-bundle__prod" data-type="him" data-product-id="him-4"
+              data-product-title="Rouge Fantasy Extrait De Parfum for Unisex – 50ml"
+              data-product-img="https://scentgames.in/cdn/shop/files/48_400x400_crop_center.jpg?v=1777812073">
+              <div class="sg-bundle__img-wrap">
+                <img src="https://scentgames.in/cdn/shop/files/48_400x400_crop_center.jpg?v=1777812073"
+                  alt="Rouge Fantasy Extrait">
+                <div class="sg-bundle__check-badge"><svg viewBox="0 0 12 12">
+                    <polyline points="2,6 5,9 10,3"></polyline>
+                  </svg></div>
+              </div>
+              <h4 class="sg-bundle__prod-name">Rouge Fantasy Extrait</h4>
+              <p class="sg-bundle__prod-note">Spicy · Dark · Intense</p>
+              <button type="button" class="sg-bundle__prod-add">+ Add</button>
+            </div>
+          </div>
+
+          <div class="sg-bundle__footer">
+            <button id="sg-cta-him" class="sg-bundle__cta sg-bundle__cta--primary" disabled>Pick 3 more to build your
+              bundle</button>
+            <a class="sg-bundle__cta sg-bundle__cta--secondary" href="#collections">View all →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SHIPPING POLICY MODAL ──────────────────────────────────────────── -->
+  <div class="policy-modal-overlay" id="shipping-modal-overlay" onclick="closeShippingModal()"></div>
+  <div class="policy-modal" id="shipping-modal" role="dialog" aria-modal="true" aria-labelledby="shipping-modal-title">
+    <div class="policy-modal__inner">
+      <button class="policy-modal__close" onclick="closeShippingModal()" aria-label="Close Shipping Policy">✕</button>
+      <h2 class="policy-modal__title" id="shipping-modal-title">Shipping Policy</h2>
+      <div class="policy-modal__body">
+        <p>Purchases are shipped from our warehouse in <strong>Kanpur, Uttar Pradesh – India</strong>, by courier.
+          Please allow the following number of days from receipt of your order.</p>
+        <p><strong>India Wide – 3 to 7 business days</strong></p>
+        <p>Order deliveries will be made between <strong>9am – 8pm Monday – Saturday</strong>. Goods will need to be
+          signed for upon delivery. If you cannot be there to sign for your delivery please suggest an alternative i.e.
+          a family member, colleague, neighbor, etc.</p>
+        <p>Scent Games takes <strong>no responsibility</strong> for goods signed by an alternative person.</p>
+        <p>Scent Games is <strong>not responsible for damage after delivery</strong>.</p>
+        <p>All claims for shortages or damages must be reported to customer service <strong>on the day of
+            delivery</strong>. Shipping and handling rates may vary based on product, packaging, size, volume, type and
+          other considerations. The shipping and handling charges are given at the time of check out and consumers will
+          know about this before making payments.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="index.js"></script>
+</body>
+
+</html>
