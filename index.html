@@ -55,6 +55,7 @@
           <li><a href="#collections" class="nav-link">Collections</a></li>
           <li><a href="#testimonials" class="nav-link">Reviews</a></li>
           <li><a href="#stories" class="nav-link">Our Stories</a></li>
+          <li><a href="#scent-finder" class="nav-link">Find My Scent</a></li>
         </ul>
       </nav>
 
@@ -97,7 +98,7 @@
       <div class="hero-slide active">
         <div class="hero-video-container">
           <video class="hero-video" autoplay muted loop playsinline>
-            <source src="Scent_Games(BlueDrip)commercial.mp4" type="video/mp4">
+            <source src="assets/videos/Scent_Games(BlueDrip)commercial.mp4" type="video/mp4">
           </video>
         </div>
 
@@ -112,7 +113,7 @@
       <div class="hero-slide">
         <div class="hero-video-container">
           <video class="hero-video" autoplay muted loop playsinline>
-            <source src="lush muse.mp4" type="video/mp4">
+            <source src="assets/videos/lush muse.mp4" type="video/mp4">
           </video>
         </div>
 
@@ -127,7 +128,7 @@
       <div class="hero-slide">
         <div class="hero-video-container">
           <video class="hero-video" autoplay muted loop playsinline>
-            <source src="Scent_Games(RichAF)commercial.mp4" type="video/mp4">
+            <source src="assets/videos/Scent_Games(RichAF)commercial.mp4" type="video/mp4">
           </video>
         </div>
         <div class="hero-content"></div>
@@ -137,7 +138,7 @@
       <div class="hero-slide">
         <div class="hero-video-container">
           <video class="hero-video" autoplay muted loop playsinline>
-            <source src="Scent_games(Vanillicious)commercial.mp4" type="video/mp4">
+            <source src="assets/videos/Scent_games(Vanillicious)commercial.mp4" type="video/mp4">
           </video>
         </div>
         <div class="hero-content"></div>
@@ -147,7 +148,7 @@
       <div class="hero-slide">
         <div class="hero-video-container">
           <video class="hero-video" autoplay muted loop playsinline>
-            <source src="Scent_games(WhatIF)Commercial.mp4" type="video/mp4">
+            <source src="assets/videos/Scent_games(WhatIF)Commercial.mp4" type="video/mp4">
           </video>
         </div>
         <div class="hero-content"></div>
@@ -168,10 +169,158 @@
 
     </section>
 
+    <!-- ── SCENT FINDER QUIZ SECTION ───────────────────────────────────────── -->
+    <section class="quiz-section section" id="scent-finder">
+      <button class="quiz-modal-close" id="quiz-modal-close" aria-label="Close Scent Finder">✕</button>
+      <div class="container">
+        <h2 class="section-title">FIND YOUR PERFECT <span class="title-highlight">SCENT</span></h2>
+        <p class="quiz-subtitle">Take our quick 4-step matchmaking quiz to discover your signature fragrance.</p>
+
+        <div class="quiz-card" id="quiz-card">
+          <!-- Quiz Progress Indicator -->
+          <div class="quiz-progress-wrap">
+            <div class="quiz-progress-labels">
+              <span id="quiz-step-count">Step 1 of 4</span>
+              <span id="quiz-step-percent">25% Complete</span>
+            </div>
+            <div class="quiz-progress-bar">
+              <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 25%;"></div>
+            </div>
+          </div>
+
+          <!-- Step 1: Gender -->
+          <div class="quiz-step active" data-step="1">
+            <h3 class="quiz-question">Who is this fragrance for?</h3>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option" data-value="him">
+                <span class="material-symbols-outlined quiz-option-icon">man</span>
+                <span class="quiz-option-title">For Him</span>
+                <span class="quiz-option-desc">Bold, masculine, and sophisticated blends</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="her">
+                <span class="material-symbols-outlined quiz-option-icon">woman</span>
+                <span class="quiz-option-title">For Her</span>
+                <span class="quiz-option-desc">Elegant, feminine, and alluring blends</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="unisex">
+                <span class="material-symbols-outlined quiz-option-icon">wc</span>
+                <span class="quiz-option-title">Unisex / Everyone</span>
+                <span class="quiz-option-desc">Versatile, balanced, and gender-neutral blends</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Vibe -->
+          <div class="quiz-step" data-step="2">
+            <h3 class="quiz-question">What is your preferred vibe?</h3>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option" data-value="fresh">
+                <span class="material-symbols-outlined quiz-option-icon">water_drop</span>
+                <span class="quiz-option-title">Fresh & Aquatic</span>
+                <span class="quiz-option-desc">Clean, ocean breezes, and bright citrus notes</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="woody">
+                <span class="material-symbols-outlined quiz-option-icon">forest</span>
+                <span class="quiz-option-title">Woody & Earthy</span>
+                <span class="quiz-option-desc">Warm, deep forest, and rich sandalwood/cedar</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="sweet">
+                <span class="material-symbols-outlined quiz-option-icon">icecream</span>
+                <span class="quiz-option-title">Floral & Sweet</span>
+                <span class="quiz-option-desc">Comforting vanilla, floral gardens, and sweet jasmine</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="spicy">
+                <span class="material-symbols-outlined quiz-option-icon">local_fire_department</span>
+                <span class="quiz-option-title">Spicy & Intense</span>
+                <span class="quiz-option-desc">Bold spices, rich oud, and complex leather</span>
+              </button>
+            </div>
+            <div class="quiz-navigation">
+              <button type="button" class="quiz-nav-btn quiz-nav-btn--prev">Back</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Occasion -->
+          <div class="quiz-step" data-step="3">
+            <h3 class="quiz-question">When do you plan to wear it most?</h3>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option" data-value="daily">
+                <span class="material-symbols-outlined quiz-option-icon">sunny</span>
+                <span class="quiz-option-title">Daily / Casual wear</span>
+                <span class="quiz-option-desc">Versatile scents perfect for everyday settings</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="night">
+                <span class="material-symbols-outlined quiz-option-icon">dark_mode</span>
+                <span class="quiz-option-title">Nights & Special Events</span>
+                <span class="quiz-option-desc">Rich, seductive blends for evening outings</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="office">
+                <span class="material-symbols-outlined quiz-option-icon">business_center</span>
+                <span class="quiz-option-title">Office / Professional</span>
+                <span class="quiz-option-desc">Clean, subtle scents that are polite and refined</span>
+              </button>
+            </div>
+            <div class="quiz-navigation">
+              <button type="button" class="quiz-nav-btn quiz-nav-btn--prev">Back</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Intensity -->
+          <div class="quiz-step" data-step="4">
+            <h3 class="quiz-question">Choose your fragrance intensity:</h3>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option" data-value="subtle">
+                <span class="material-symbols-outlined quiz-option-icon">visibility_off</span>
+                <span class="quiz-option-title">Subtle & Close</span>
+                <span class="quiz-option-desc">Stays close to your skin, intimate and soft</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="moderate">
+                <span class="material-symbols-outlined quiz-option-icon">lens</span>
+                <span class="quiz-option-title">Moderate & Balanced</span>
+                <span class="quiz-option-desc">Leaves a pleasant trail, not overpowering</span>
+              </button>
+              <button type="button" class="quiz-option" data-value="bold">
+                <span class="material-symbols-outlined quiz-option-icon">offline_bolt</span>
+                <span class="quiz-option-title">Bold & Intense</span>
+                <span class="quiz-option-desc">Long projection, fills a room, high statement</span>
+              </button>
+            </div>
+            <div class="quiz-navigation">
+              <button type="button" class="quiz-nav-btn quiz-nav-btn--prev">Back</button>
+            </div>
+          </div>
+
+          <!-- Result Container (Hidden by default) -->
+          <div class="quiz-result" id="quiz-result" style="display: none;">
+            <div class="quiz-result-grid">
+              <div class="quiz-result-img-wrap">
+                <img id="quiz-match-img" src="" alt="Matched Fragrance">
+              </div>
+              <div class="quiz-result-details">
+                <span class="quiz-result-badge">YOUR PERFECT MATCH</span>
+                <h3 class="quiz-result-title" id="quiz-match-title">Fragrance Title</h3>
+                <p class="quiz-result-notes" id="quiz-match-notes">Notes: Woody · Oud · Spicy</p>
+                <p class="quiz-result-desc" id="quiz-match-desc">Fragrance description here...</p>
+                <div class="quiz-result-price-row">
+                  <span class="quiz-result-price" id="quiz-match-price">₹849</span>
+                  <span class="quiz-result-original-price" id="quiz-match-original">₹1,499</span>
+                </div>
+                <div class="quiz-result-actions">
+                  <button type="button" class="quiz-result-btn" id="quiz-match-add-btn">ADD TO BAG</button>
+                  <button type="button" class="quiz-result-btn quiz-result-btn--secondary" id="quiz-retake-btn">RETAKE QUIZ</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ── FEATURED PRODUCTS SECTION ──────────────────────────────────────── -->
     <section class="products-section section" id="featured-products">
       <div class="container">
-        <h2 class="section-title">Our Best <span class="title-highlight">Sellers</span></h2>
+        <h2 class="section-title">Best of <span class="title-highlight">Scent Games</span></h2>
 
         <div class="products-grid">
 
@@ -261,7 +410,7 @@
             <div class="product-card__img-wrap">
               <img src="https://scentgames.in/cdn/shop/files/69_400x400_crop_center.jpg?v=1777812440"
                 alt="Rich AF Extrait De Parfum">
-              <img src="Rich Af Instagram Post.png"
+              <img src="assets/images/Rich Af Instagram Post.png"
                 alt="Rich AF Instagram Post" class="hover-img">
             </div>
             <div class="product-card__details">
@@ -285,9 +434,97 @@
             </div>
           </div>
 
+          <!-- Product 5: Vanillicious (Extra) -->
+          <div class="product-card extra-product" data-product-id="single-vanillicious" data-gender="her">
+            <div class="product-card__img-wrap">
+              <img src="https://scentgames.in/cdn/shop/files/62_400x400_crop_center.jpg?v=1777812438"
+                alt="Vanillicious Extrait De Parfum">
+            </div>
+            <div class="product-card__details">
+              <div class="product-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.6</span>
+                <span class="rating-count">(78 reviews)</span>
+              </div>
+              <h3 class="product-card__title">Vanillicious Extrait De Parfum</h3>
+              <p class="product-card__subtitle">For Her · Bold & Sweet · 50ml</p>
+              <div class="product-card__price-row">
+                <span class="price-current">₹849</span>
+                <span class="price-original">₹1,499</span>
+                <span class="price-discount">43% OFF</span>
+              </div>
+              <button type="button" class="product-card__add-btn" data-id="single-vanillicious"
+                data-title="Vanillicious Extrait De Parfum - 50ml" data-price="849"
+                data-img="https://scentgames.in/cdn/shop/files/62_400x400_crop_center.jpg?v=1777812438">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 6: What If (Extra) -->
+          <div class="product-card extra-product" data-product-id="single-what-if" data-gender="him">
+            <div class="product-card__img-wrap">
+              <img src="https://scentgames.in/cdn/shop/files/41_400x400_crop_center.jpg?v=1777812439"
+                alt="What If Extrait De Parfum">
+            </div>
+            <div class="product-card__details">
+              <div class="product-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.7</span>
+                <span class="rating-count">(89 reviews)</span>
+              </div>
+              <h3 class="product-card__title">What If Extrait De Parfum</h3>
+              <p class="product-card__subtitle">For Him · Bold Woody · 50ml</p>
+              <div class="product-card__price-row">
+                <span class="price-current">₹849</span>
+                <span class="price-original">₹1,499</span>
+                <span class="price-discount">43% OFF</span>
+              </div>
+              <button type="button" class="product-card__add-btn" data-id="single-what-if"
+                data-title="What If Extrait De Parfum - 50ml" data-price="849"
+                data-img="https://scentgames.in/cdn/shop/files/41_400x400_crop_center.jpg?v=1777812439">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 7: Solid Perfume Collection (Extra) -->
+          <div class="product-card extra-product" data-product-id="single-solid-perfume" data-gender="solid">
+            <div class="product-card__img-wrap">
+              <img src="https://scentgames.in/cdn/shop/files/2_86bc3cbd-1ece-49d7-a30e-6081ee94cf53.jpg?v=1773328886&width=1500"
+                alt="Solid Perfume Collection">
+            </div>
+            <div class="product-card__details">
+              <div class="product-card__rating">
+                <span class="star-icon">★</span>
+                <span class="rating-value">4.8</span>
+                <span class="rating-count">(210 reviews)</span>
+              </div>
+              <h3 class="product-card__title">Solid Perfume Collection</h3>
+              <p class="product-card__subtitle">Unisex · Travel-friendly Solid Wax · 15g</p>
+              <div class="product-card__price-row">
+                <span class="price-current">₹499</span>
+                <span class="price-original">₹999</span>
+                <span class="price-discount">50% OFF</span>
+              </div>
+              <button type="button" class="product-card__add-btn" data-id="single-solid-perfume"
+                data-title="Solid Perfume Collection - 15g" data-price="499"
+                data-img="https://scentgames.in/cdn/shop/files/2_86bc3cbd-1ece-49d7-a30e-6081ee94cf53.jpg?v=1773328886&width=1500">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- View All Products Button -->
+        <div class="products-action-wrap">
+          <button type="button" class="view-all-products-btn" id="view-all-products-btn">VIEW ALL PRODUCTS</button>
         </div>
       </div>
     </section>
+
+
 
     <!-- ── FEATURES SECTION ───────────────────────────────────────────────── -->
     <section class="features-section">
@@ -733,6 +970,12 @@
 
   <!-- ── FLOATING SCROLL TO TOP BUTTON ────────────────────────────────────── -->
   <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+  <!-- ── FLOATING QUIZ BUTTON ─────────────────────────────────────────────── -->
+  <button class="floating-quiz-btn" id="floating-quiz-btn" aria-label="Find Your Scent">
+    <span class="material-symbols-outlined">explore</span>
+    <span>Find Your Scent</span>
+  </button>
 
   <!-- ── SITE FOOTER ──────────────────────────────────────────────────────── -->
   <footer class="site-footer">

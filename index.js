@@ -668,6 +668,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── FLOATING QUIZ BUTTON LOGIC & MODAL TRIGGER ───────────────────────── */
+  const quizModal = document.getElementById('scent-finder');
+  const floatingQuizBtn = document.getElementById('floating-quiz-btn');
+  const quizModalCloseBtn = document.getElementById('quiz-modal-close');
+  const quizNavLink = document.querySelector('a[href="#scent-finder"]');
+
+  function openQuizModal() {
+    if (!quizModal) return;
+    
+    // Close mobile menu if active
+    if (mainNav && mainNav.classList.contains('active')) {
+      mainNav.classList.remove('active');
+      if (menuToggle) menuToggle.innerHTML = '☰';
+    }
+    
+    quizModal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      quizModal.classList.add('active');
+    });
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeQuizModal() {
+    if (!quizModal) return;
+    quizModal.classList.remove('active');
+    setTimeout(() => {
+      quizModal.style.display = 'none';
+    }, 350);
+    document.body.style.overflow = '';
+  }
+
+  if (floatingQuizBtn) {
+    floatingQuizBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openQuizModal();
+    });
+  }
+
+  if (quizNavLink) {
+    quizNavLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      openQuizModal();
+    });
+  }
+
+  if (quizModalCloseBtn) {
+    quizModalCloseBtn.addEventListener('click', closeQuizModal);
+  }
+
+  if (quizModal) {
+    quizModal.addEventListener('click', (e) => {
+      if (e.target === quizModal || e.target.classList.contains('container')) {
+        closeQuizModal();
+      }
+    });
+  }
+
+  // Escape key support
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeQuizModal();
+    }
+  });
+
   /* ── CRAZY DEALS CAROUSEL LOGIC ───────────────────────────────────────── */
   const dealsPrevBtn = document.querySelector('.deals-nav-btn--prev');
   const dealsNextBtn = document.querySelector('.deals-nav-btn--next');
@@ -822,8 +886,270 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Expose close function globally so the builders can trigger it
+  // Expose modal functions globally so the category builder can trigger it
   window.closeBundleModal = closeBundleModal;
+  window.openBundleModal = openBundleModal;
+
+  /* ── VIEW ALL PRODUCTS TOGGLE LOGIC ────────────────────────────────────── */
+  const viewAllBtn = document.getElementById('view-all-products-btn');
+  const bestSellersGrid = document.querySelector('#featured-products .products-grid');
+
+  if (viewAllBtn && bestSellersGrid) {
+    viewAllBtn.addEventListener('click', () => {
+      const isShowingAll = bestSellersGrid.classList.toggle('show-all');
+      
+      if (isShowingAll) {
+        viewAllBtn.textContent = 'SHOW LESS';
+      } else {
+        viewAllBtn.textContent = 'VIEW ALL PRODUCTS';
+        const bestSellersSection = document.getElementById('featured-products');
+        if (bestSellersSection) {
+          bestSellersSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }
+
+  /* ── SCENT FINDER QUIZ LOGIC ─────────────────────────────────────────── */
+  const quizSteps = document.querySelectorAll('.quiz-step');
+  const quizProgressFill = document.getElementById('quiz-progress-fill');
+  const quizStepCount = document.getElementById('quiz-step-count');
+  const quizStepPercent = document.getElementById('quiz-step-percent');
+  const quizResult = document.getElementById('quiz-result');
+  const prevBtns = document.querySelectorAll('.quiz-nav-btn--prev');
+  const quizRetakeBtn = document.getElementById('quiz-retake-btn');
+  const quizAddBtn = document.getElementById('quiz-match-add-btn');
+
+  let currentStep = 1;
+  const quizAnswers = {
+    gender: '',
+    vibe: '',
+    occasion: '',
+    intensity: ''
+  };
+
+  const quizProducts = [
+    {
+      id: 'single-blue-drip',
+      title: 'Blue Drip Extrait De Parfum',
+      notes: 'Fresh · Aquatic · Vanilla',
+      desc: 'Masterfully crafted for modern versatility. A fresh splash of aquatic notes layered on a warm vanilla backdrop. Perfect for clean, everyday elegance.',
+      price: '₹849',
+      originalPrice: '₹1,499',
+      img: 'https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440'
+    },
+    {
+      id: 'single-lush-muse',
+      title: 'Lush Muse Extrait De Parfum',
+      notes: 'Fresh · Floral · Woody',
+      desc: 'Elegant and alluring. Crisp green and fresh aquatic vibes meeting soft floral fields and dry woody base tones. Stays sophisticated throughout the day.',
+      price: '₹899',
+      originalPrice: '₹1,499',
+      img: 'https://scentgames.in/cdn/shop/files/55_400x400_crop_center.jpg?v=1777812439'
+    },
+    {
+      id: 'single-rouge-fantasy',
+      title: 'Rouge Fantasy Extrait De Parfum',
+      notes: 'Spicy · Floral · Warm Rosy',
+      desc: 'An intense, magical statement. Saffron and warm spices dance with fresh jasmine and rich, comforting resin. The ultimate choice for deep, night-out attraction.',
+      price: '₹849',
+      originalPrice: '₹1,499',
+      img: 'https://scentgames.in/cdn/shop/files/48_400x400_crop_center.jpg?v=1777812073'
+    },
+    {
+      id: 'single-rich-af',
+      title: 'Rich AF Extrait De Parfum',
+      notes: 'Citrus · Fresh Aqua · Oakmoss',
+      desc: 'Bold, masculine, and unapologetic. Zesty citrus energy combining with clean ocean notes and a strong, earthy oakmoss base. Designed to leave a lasting impression.',
+      price: '₹849',
+      originalPrice: '₹1,499',
+      img: 'https://scentgames.in/cdn/shop/files/69_400x400_crop_center.jpg?v=1777812440'
+    },
+    {
+      id: 'single-vanillicious',
+      title: 'Vanillicious Extrait De Parfum',
+      notes: 'Sweet Vanilla · Amber · Spicy Oud',
+      desc: 'Comforting yet bold and mysterious. Rich caramelized vanilla matching with dark amber notes and a hint of exotic, spicy oud. A deep gourmand attraction.',
+      price: '₹849',
+      originalPrice: '₹1,499',
+      img: 'https://scentgames.in/cdn/shop/files/62_400x400_crop_center.jpg?v=1777812438'
+    },
+    {
+      id: 'single-what-if',
+      title: 'What If Extrait De Parfum',
+      notes: 'Earthy Sandalwood · Cedar · Dark Amber',
+      desc: 'Deep, mysterious woodcraft. Creamy sandalwood paired with dry cedarwood and a warm amber glow. A sophisticated, long-lasting aroma for night events.',
+      price: '₹849',
+      originalPrice: '₹1,499',
+      img: 'https://scentgames.in/cdn/shop/files/41_400x400_crop_center.jpg?v=1777812439'
+    },
+    {
+      id: 'single-solid-perfume',
+      title: 'Solid Perfume Collection',
+      notes: 'Warm Beeswax · Subdued Musk · Citrus',
+      desc: 'An intimate, travel-friendly solid balm. Concentrated fragrance oil in a skin-nourishing wax base. Designed to project close to the skin for personal comfort.',
+      price: '₹499',
+      originalPrice: '₹999',
+      img: 'https://scentgames.in/cdn/shop/files/2_86bc3cbd-1ece-49d7-a30e-6081ee94cf53.jpg?v=1773328886&width=1500'
+    }
+  ];
+
+  function showStep(step) {
+    quizSteps.forEach(el => {
+      const stepNum = parseInt(el.dataset.step, 10);
+      if (stepNum === step) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+      }
+    });
+
+    if (quizResult) quizResult.style.display = 'none';
+
+    // Update progress bar
+    if (quizProgressFill && quizStepCount && quizStepPercent) {
+      const totalSteps = 4;
+      const pct = Math.round((step / totalSteps) * 100);
+      quizProgressFill.style.width = `${pct}%`;
+      quizStepCount.textContent = `Step ${step} of ${totalSteps}`;
+      quizStepPercent.textContent = `${pct}% Complete`;
+    }
+  }
+
+  function handleOptionClick(step, value) {
+    if (step === 1) quizAnswers.gender = value;
+    if (step === 2) quizAnswers.vibe = value;
+    if (step === 3) quizAnswers.occasion = value;
+    if (step === 4) {
+      quizAnswers.intensity = value;
+      calculateMatch();
+      return;
+    }
+
+    currentStep = step + 1;
+    showStep(currentStep);
+  }
+
+  function calculateMatch() {
+    let matchedProduct = null;
+
+    // Matchmaking Logic
+    if (quizAnswers.intensity === 'subtle') {
+      matchedProduct = quizProducts.find(p => p.id === 'single-solid-perfume');
+    } else if (quizAnswers.gender === 'him') {
+      if (quizAnswers.vibe === 'fresh') {
+        matchedProduct = quizProducts.find(p => p.id === 'single-rich-af');
+      } else {
+        matchedProduct = quizProducts.find(p => p.id === 'single-what-if');
+      }
+    } else if (quizAnswers.gender === 'her') {
+      if (quizAnswers.vibe === 'fresh' || quizAnswers.vibe === 'woody') {
+        matchedProduct = quizProducts.find(p => p.id === 'single-lush-muse');
+      } else {
+        matchedProduct = quizProducts.find(p => p.id === 'single-vanillicious');
+      }
+    } else { // unisex / everyone
+      if (quizAnswers.vibe === 'fresh') {
+        matchedProduct = quizProducts.find(p => p.id === 'single-blue-drip');
+      } else {
+        matchedProduct = quizProducts.find(p => p.id === 'single-rouge-fantasy');
+      }
+    }
+
+    // Default fallback if logic has gaps
+    if (!matchedProduct) {
+      matchedProduct = quizProducts[0];
+    }
+
+    // Populate recommendation
+    const imgEl = document.getElementById('quiz-match-img');
+    const titleEl = document.getElementById('quiz-match-title');
+    const notesEl = document.getElementById('quiz-match-notes');
+    const descEl = document.getElementById('quiz-match-desc');
+    const priceEl = document.getElementById('quiz-match-price');
+    const origPriceEl = document.getElementById('quiz-match-original');
+
+    if (imgEl) imgEl.src = matchedProduct.img;
+    if (titleEl) titleEl.textContent = matchedProduct.title;
+    if (notesEl) notesEl.textContent = `Notes: ${matchedProduct.notes}`;
+    if (descEl) descEl.textContent = matchedProduct.desc;
+    if (priceEl) priceEl.textContent = matchedProduct.price;
+    if (origPriceEl) origPriceEl.textContent = matchedProduct.originalPrice;
+
+    // Attach dataset to add-to-bag button
+    if (quizAddBtn) {
+      quizAddBtn.dataset.id = matchedProduct.id;
+      quizAddBtn.dataset.title = matchedProduct.title;
+      quizAddBtn.dataset.price = matchedProduct.price.replace('₹', '');
+      quizAddBtn.dataset.img = matchedProduct.img;
+    }
+
+    // Show result page
+    quizSteps.forEach(el => el.classList.remove('active'));
+    if (quizResult) quizResult.style.display = 'block';
+
+    // Update progress indicator to 100%
+    if (quizProgressFill && quizStepCount && quizStepPercent) {
+      quizProgressFill.style.width = '100%';
+      quizStepCount.textContent = 'Recommendation Ready!';
+      quizStepPercent.textContent = '100% Complete';
+    }
+  }
+
+  // Hook Choice Option clicks
+  quizSteps.forEach(stepEl => {
+    const stepNum = parseInt(stepEl.dataset.step, 10);
+    const options = stepEl.querySelectorAll('.quiz-option');
+    options.forEach(opt => {
+      opt.addEventListener('click', () => {
+        const value = opt.dataset.value;
+        handleOptionClick(stepNum, value);
+      });
+    });
+  });
+
+  // Hook Back Buttons
+  prevBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+  });
+
+  // Hook Retake Quiz Button
+  if (quizRetakeBtn) {
+    quizRetakeBtn.addEventListener('click', () => {
+      currentStep = 1;
+      quizAnswers.gender = '';
+      quizAnswers.vibe = '';
+      quizAnswers.occasion = '';
+      quizAnswers.intensity = '';
+      showStep(1);
+    });
+  }
+
+  // Hook Quiz Add to Cart Button
+  if (quizAddBtn) {
+    quizAddBtn.addEventListener('click', () => {
+      const id = quizAddBtn.dataset.id;
+      const title = quizAddBtn.dataset.title;
+      const price = parseInt(quizAddBtn.dataset.price, 10);
+      const img = quizAddBtn.dataset.img;
+
+      if (id && title && price && img) {
+        const item = {
+          id: id,
+          title: title,
+          price: price,
+          quantity: 1,
+          img: img
+        };
+        addToCart(item);
+      }
+    });
+  }
 
 });
 
