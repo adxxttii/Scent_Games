@@ -999,10 +999,10 @@ button {
 }
 
 .formulated-icon-wrap {
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 80px;
   margin-bottom: 15px;
-  border-radius: var(--border-radius-full);
+  border-radius: var(--border-radius-sm);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.3s ease;
