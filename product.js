@@ -193,19 +193,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainAddBtn = document.getElementById('main-add-to-bag');
   const stickyAddBtn = document.getElementById('sticky-add-to-bag');
 
-  function triggerAddToBag() {
+  function triggerAddToBag(e) {
     if (typeof window.addToCart !== 'function') {
       console.error('addToCart is not exposed on window');
       alert('Error adding item to cart. Please try again.');
       return;
     }
 
+    const btn = e.currentTarget;
+    const id = btn.dataset.id;
+    const title = btn.dataset.title;
+    const price = parseInt(btn.dataset.price, 10);
+    const img = btn.dataset.img;
+
     const item = {
-      id: 'single-blue-drip',
-      title: 'Blue Drip Extrait De Parfum - 50ml',
-      price: 849,
+      id: id,
+      title: title,
+      price: price,
       quantity: currentQty,
-      img: 'https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440'
+      img: img
     };
 
     window.addToCart(item);
