@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if item already exists (for bundles, they are unique based on selection)
     const existingIndex = cart.findIndex(c => c.id === item.id);
     if (existingIndex > -1) {
-      cart[existingIndex].quantity += 1;
+      cart[existingIndex].quantity += (item.quantity || 1);
     } else {
       cart.push(item);
     }
@@ -1150,6 +1150,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  window.addToCart = addToCart;
+  window.toggleCart = toggleCart;
 
 });
 
