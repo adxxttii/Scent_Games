@@ -4554,9 +4554,31 @@ button {
 
   .pincode-input-row {
     flex-direction: column;
+    gap: 8px;
+  }
+
+  .pincode-input-row input {
+    width: 100%;
   }
 
   .pincode-input-row button {
+    width: 100%;
     padding: 12px;
+  }
+
+  .cart-pincode-checker {
+    padding-top: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .pincode-label {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .pincode-result-box {
+    font-size: 1.15rem;
+    padding: 10px;
   }
 }
