@@ -1349,9 +1349,248 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ── SEARCH OVERLAY INTERACTION ───────────────────────────────────────── */
+  
+  const searchProducts = [
+    {
+      id: 'single-blue-drip',
+      title: 'Blue Drip Extrait De Parfum',
+      notes: 'Fresh · Aquatic · Vanilla',
+      price: 849,
+      img: 'https://scentgames.in/cdn/shop/files/34_400x400_crop_center.jpg?v=1777812440',
+      url: 'product-blue-drip.html',
+      tags: 'unisex blue drip fresh aqua vanilla perfume extract'
+    },
+    {
+      id: 'single-lush-muse',
+      title: 'Lush Muse Extrait De Parfum',
+      notes: 'Fresh · Floral · Woody',
+      price: 899,
+      img: 'https://scentgames.in/cdn/shop/files/55_400x400_crop_center.jpg?v=1777812439',
+      url: 'product-lush-muse.html',
+      tags: 'her lush muse fresh floral woody green rose perfume extract'
+    },
+    {
+      id: 'single-rich-af',
+      title: 'Rich AF Extrait De Parfum',
+      notes: 'Citrus · Fresh Aqua · Oakmoss',
+      price: 849,
+      img: 'https://scentgames.in/cdn/shop/files/69_400x400_crop_center.jpg?v=1777812440',
+      url: 'product-rich-af.html',
+      tags: 'him rich af citrus fresh aqua oakmoss bold masculine perfume extract'
+    },
+    {
+      id: 'single-rouge-fantasy',
+      title: 'Rouge Fantasy Extrait De Parfum',
+      notes: 'Spicy · Floral · Warm Rosy',
+      price: 849,
+      img: 'https://scentgames.in/cdn/shop/files/48_400x400_crop_center.jpg?v=1777812073',
+      url: 'index.html#deals',
+      tags: 'unisex rouge fantasy spicy floral warm rosy saffron jasmine perfume extract'
+    },
+    {
+      id: 'single-vanillicious',
+      title: 'Vanillicious Extrait De Parfum',
+      notes: 'Sweet Vanilla · Amber · Spicy Oud',
+      price: 849,
+      img: 'https://scentgames.in/cdn/shop/files/62_400x400_crop_center.jpg?v=1777812438',
+      url: 'index.html#deals',
+      tags: 'her vanillicious sweet vanilla amber spicy oud warm perfume extract'
+    },
+    {
+      id: 'single-what-if',
+      title: 'What If Extrait De Parfum',
+      notes: 'Earthy Sandalwood · Cedar · Dark Amber',
+      price: 849,
+      img: 'https://scentgames.in/cdn/shop/files/41_400x400_crop_center.jpg?v=1777812439',
+      url: 'index.html#deals',
+      tags: 'him what if earthy sandalwood cedar dark amber woody perfume extract'
+    },
+    {
+      id: 'single-solid-perfume',
+      title: 'Solid Perfume Collection',
+      notes: 'Warm Beeswax · Subdued Musk · Citrus',
+      price: 499,
+      img: 'https://scentgames.in/cdn/shop/files/2_86bc3cbd-1ece-49d7-a30e-6081ee94cf53.jpg?v=1773328886&width=1500',
+      url: 'index.html#deals',
+      tags: 'unisex solid perfume pocket travel musk balm'
+    }
+  ];
+
+  function initSearchOverlay() {
+    // Inject the Search Modal HTML dynamically
+    const searchOverlayHTML = `
+      <div class="search-modal-overlay" id="search-modal-overlay"></div>
+      <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+        <div class="search-modal__inner">
+          <button class="search-modal__close" id="search-modal-close" aria-label="Close Search">✕</button>
+          <h2 class="search-modal__title" id="search-modal-title">Search Our Collection</h2>
+          <div class="search-input-wrap">
+            <span class="material-symbols-outlined search-input-icon">search</span>
+            <input type="text" id="search-input" placeholder="Search for perfumes, solid balms, notes..." autocomplete="off">
+            <button class="search-clear-btn" id="search-clear-btn" style="display: none;">✕</button>
+          </div>
+          <div class="search-results-wrap" id="search-results-wrap">
+            <!-- Dynamic results populated here -->
+          </div>
+        </div>
+      </div>
+    `;
+    
+    const div = document.createElement('div');
+    div.innerHTML = searchOverlayHTML;
+    document.body.appendChild(div);
+
+    const overlay = document.getElementById('search-modal-overlay');
+    const modal = document.getElementById('search-modal');
+    const searchBtn = document.getElementById('search-btn');
+    const closeBtn = document.getElementById('search-modal-close');
+    const searchInput = document.getElementById('search-input');
+    const clearBtn = document.getElementById('search-clear-btn');
+    const resultsWrap = document.getElementById('search-results-wrap');
+
+    if (!overlay || !modal || !searchBtn || !closeBtn || !searchInput || !clearBtn || !resultsWrap) {
+      console.warn('Search elements could not be initialized completely.');
+      return;
+    }
+
+    function openSearchModal(e) {
+      if (e) e.preventDefault();
+      overlay.style.display = 'block';
+      modal.style.display = 'block';
+      
+      requestAnimationFrame(() => {
+        overlay.classList.add('active');
+        modal.classList.add('active');
+      });
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => searchInput.focus(), 100);
+      renderDefaultResults();
+    }
+
+    function closeSearchModal() {
+      overlay.classList.remove('active');
+      modal.classList.remove('active');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        modal.style.display = 'none';
+      }, 350);
+      document.body.style.overflow = '';
+      searchInput.value = '';
+      clearBtn.style.display = 'none';
+    }
+
+    searchBtn.addEventListener('click', openSearchModal);
+    closeBtn.addEventListener('click', closeSearchModal);
+    overlay.addEventListener('click', closeSearchModal);
+
+    // Escape Key Support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeSearchModal();
+      }
+    });
+
+    // Handle Input Events
+    searchInput.addEventListener('input', () => {
+      const value = searchInput.value.trim().toLowerCase();
+      
+      if (value.length > 0) {
+        clearBtn.style.display = 'block';
+        performSearch(value);
+      } else {
+        clearBtn.style.display = 'none';
+        renderDefaultResults();
+      }
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearBtn.style.display = 'none';
+      searchInput.focus();
+      renderDefaultResults();
+    });
+
+    function renderDefaultResults() {
+      resultsWrap.innerHTML = `
+        <h4 class="search-popular-title">Popular Choices</h4>
+      `;
+      // Show first 3 popular items as default choices
+      searchProducts.slice(0, 3).forEach(item => {
+        const itemEl = createResultItemElement(item);
+        resultsWrap.appendChild(itemEl);
+      });
+    }
+
+    function performSearch(query) {
+      resultsWrap.innerHTML = '';
+      const matches = searchProducts.filter(item => {
+        return item.title.toLowerCase().includes(query) || 
+               item.notes.toLowerCase().includes(query) || 
+               item.tags.toLowerCase().includes(query);
+      });
+
+      if (matches.length > 0) {
+        matches.forEach(item => {
+          const itemEl = createResultItemElement(item);
+          resultsWrap.appendChild(itemEl);
+        });
+      } else {
+        resultsWrap.innerHTML = `
+          <div class="search-no-results">
+            <div class="search-no-results-icon">🔎</div>
+            <p>No results found for "<strong>${escapeHtml(query)}</strong>"</p>
+            <p style="font-size: 1.2rem; color: #888; margin-top: 5px;">Check spelling or try a different term.</p>
+          </div>
+        `;
+      }
+    }
+
+    function createResultItemElement(item) {
+      const div = document.createElement('div');
+      div.className = 'search-result-item';
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" class="search-result-img">
+        <div class="search-result-info">
+          <h4 class="search-result-name">${item.title}</h4>
+          <span class="search-result-notes">${item.notes}</span>
+        </div>
+        <span class="search-result-price">₹${item.price}</span>
+      `;
+      
+      div.addEventListener('click', () => {
+        const url = item.url;
+        const currentPath = window.location.pathname;
+        if (url.startsWith('index.html#') && (currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath === '')) {
+          // Already on home page, just scroll to target
+          const targetId = url.split('#')[1];
+          const targetEl = document.getElementById(targetId);
+          closeSearchModal();
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          // Navigate to other page
+          window.location.href = url;
+        }
+      });
+
+      return div;
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+    }
+  }
+
   // Run on load
   initDefaultDeliveryEstimates();
   initPincodeChecker();
+  initSearchOverlay();
 
 });
 
