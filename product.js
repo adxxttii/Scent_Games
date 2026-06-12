@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
       notes: 'Earthy Sandalwood · Cedar · Dark Amber',
       price: 849,
       img: 'https://scentgames.in/cdn/shop/files/41_400x400_crop_center.jpg?v=1777812439',
-      url: 'index.html#deals',
+      url: 'product-what-if.html',
       tags: 'him what if earthy sandalwood cedar dark amber woody perfume extract'
     },
     {
