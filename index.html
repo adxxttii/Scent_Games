@@ -945,6 +945,17 @@
         <span>Subtotal</span>
         <span class="cart-summary-total" id="cart-subtotal">₹0</span>
       </div>
+      
+      <!-- Pincode Checker Widget -->
+      <div class="cart-pincode-checker" id="cart-pincode-checker" style="display: none;">
+        <label for="cart-pincode-input" class="pincode-label">Estimate Delivery Date</label>
+        <div class="pincode-input-row">
+          <input type="text" id="cart-pincode-input" maxlength="6" placeholder="Enter Pincode (e.g. 110001)" aria-label="Enter Pincode">
+          <button type="button" id="cart-pincode-btn">Check</button>
+        </div>
+        <div id="cart-pincode-result" class="pincode-result-box"></div>
+      </div>
+
       <button class="cart-checkout-btn" id="cart-checkout-btn" disabled>Check Out</button>
     </div>
   </div>
@@ -1115,7 +1126,7 @@
               <span class="sg-bundle__price-text">Rs 1999</span>
               <span class="sg-bundle__price-sub">any 3 picks</span>
             </div>
-            <p class="sg-bundle__perks">Free delivery · Ships today</p>
+            <p class="sg-bundle__perks" id="sg-bundle__perks-her">Free delivery · Ships today</p>
           </div>
 
           <div class="sg-bundle__slots-wrap">
@@ -1227,7 +1238,7 @@
               <span class="sg-bundle__price-text">Rs 1999</span>
               <span class="sg-bundle__price-sub">any 3 picks</span>
             </div>
-            <p class="sg-bundle__perks">Free delivery · Ships today</p>
+            <p class="sg-bundle__perks" id="sg-bundle__perks-him">Free delivery · Ships today</p>
           </div>
 
           <div class="sg-bundle__slots-wrap">
@@ -1341,7 +1352,7 @@
       <div class="policy-modal__body">
         <p>Purchases are shipped from our warehouse in <strong>Kanpur, Uttar Pradesh – India</strong>, by courier.
           Please allow the following number of days from receipt of your order.</p>
-        <p><strong>India Wide – 3 to 7 business days</strong></p>
+        <p><strong>India Wide – 3 to 7 business days</strong> <span class="policy-delivery-est" id="policy-delivery-est"></span></p>
         <p>Order deliveries will be made between <strong>9am – 8pm Monday – Saturday</strong>. Goods will need to be
           signed for upon delivery. If you cannot be there to sign for your delivery please suggest an alternative i.e.
           a family member, colleague, neighbor, etc.</p>

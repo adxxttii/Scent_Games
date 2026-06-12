@@ -243,6 +243,25 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => removeFromCart(btn.dataset.id));
       });
     }
+
+    // Toggle Pincode Checker container visibility based on cart status
+    const pincodeCheckerEl = document.getElementById('cart-pincode-checker');
+    if (pincodeCheckerEl) {
+      if (cart.length > 0) {
+        pincodeCheckerEl.style.display = 'block';
+      } else {
+        pincodeCheckerEl.style.display = 'none';
+        // Clear result
+        const pinInput = document.getElementById('cart-pincode-input');
+        const pinResult = document.getElementById('cart-pincode-result');
+        if (pinInput) pinInput.value = '';
+        if (pinResult) {
+          pinResult.innerHTML = '';
+          pinResult.className = 'pincode-result-box';
+          pinResult.style.display = 'none';
+        }
+      }
+    }
   }
 
   // GoKwik Checkout Integration
@@ -1152,6 +1171,189 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addToCart = addToCart;
   window.toggleCart = toggleCart;
+
+  /* ── SHIPPING DELIVERY CALCULATOR ALGORITHM ───────────────────────────── */
+
+  // Helper to format dates consistently (e.g. "Tue, Jun 16")
+  function formatEstimatedDate(date) {
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
+  }
+
+  // Get shipping dispatch date and delivery dates based on min/max business days
+  function calculateDeliveryDates(minBizDays, maxBizDays) {
+    const now = new Date();
+    let shipDate = new Date(now);
+    
+    // Check for cutoff of 2 PM (14:00)
+    const currentHour = now.getHours();
+    const currentDay = now.getDay(); // 0 is Sunday, 6 is Saturday
+    
+    let isDispatchedToday = false;
+    
+    if (currentDay === 0) {
+      // Sunday: Dispatched on Monday
+      shipDate.setDate(now.getDate() + 1);
+    } else {
+      if (currentHour < 14) {
+        // Before 2 PM: Dispatched today
+        isDispatchedToday = true;
+      } else {
+        // After 2 PM: Dispatched tomorrow (or Monday if tomorrow is Sunday)
+        if (currentDay === 6) {
+          // Saturday after 2 PM -> Monday
+          shipDate.setDate(now.getDate() + 2);
+        } else {
+          shipDate.setDate(now.getDate() + 1);
+        }
+      }
+    }
+    
+    // Helper to add N business days (skipping Sundays)
+    function addBusinessDays(startDate, n) {
+      let resultDate = new Date(startDate);
+      let added = 0;
+      while (added < n) {
+        resultDate.setDate(resultDate.getDate() + 1);
+        if (resultDate.getDay() !== 0) { // Skip Sunday
+          added++;
+        }
+      }
+      return resultDate;
+    }
+    
+    const minDelivery = addBusinessDays(shipDate, minBizDays);
+    const maxDelivery = addBusinessDays(shipDate, maxBizDays);
+    
+    let dispatchText = 'Ships tomorrow';
+    if (isDispatchedToday) {
+      dispatchText = 'Ships today';
+    } else if (currentDay === 6 || currentDay === 0) {
+      dispatchText = 'Ships Monday';
+    }
+
+    return {
+      dispatchText: dispatchText,
+      minDateStr: formatEstimatedDate(minDelivery),
+      maxDateStr: formatEstimatedDate(maxDelivery)
+    };
+  }
+
+  // Map 6-digit Pincode to Distance tier & business days
+  function getDistanceDetails(pincode) {
+    if (!/^\d{6}$/.test(pincode)) {
+      return null;
+    }
+    
+    if (pincode.startsWith('208')) {
+      return {
+        tier: 'Local Zone (< 50 km from Kanpur)',
+        minDays: 1,
+        maxDays: 2,
+        badgeClass: 'local-badge',
+        approxDist: 'approx. 10–25 km'
+      };
+    } else if (pincode.startsWith('1') || pincode.startsWith('2') || pincode.startsWith('8')) {
+      return {
+        tier: 'Short-Distance Zone (50 - 600 km)',
+        minDays: 2,
+        maxDays: 3,
+        badgeClass: 'near-badge',
+        approxDist: 'approx. 150–500 km'
+      };
+    } else if (pincode.startsWith('3') || pincode.startsWith('4')) {
+      return {
+        tier: 'Medium-Distance Zone (600 - 1200 km)',
+        minDays: 3,
+        maxDays: 5,
+        badgeClass: 'medium-badge',
+        approxDist: 'approx. 800–1100 km'
+      };
+    } else {
+      return {
+        tier: 'Long-Distance Zone (> 1200 km)',
+        minDays: 5,
+        maxDays: 7,
+        badgeClass: 'far-badge',
+        approxDist: 'approx. 1300–1800 km'
+      };
+    }
+  }
+
+  // Initialize static/default elements on load
+  function initDefaultDeliveryEstimates() {
+    // Standard national estimate is 3-7 business days
+    const standardEst = calculateDeliveryDates(3, 7);
+    
+    // Update bundle builder modals
+    const perksHer = document.getElementById('sg-bundle__perks-her');
+    const perksHim = document.getElementById('sg-bundle__perks-him');
+    const displayRangeStr = `${standardEst.minDateStr} – ${standardEst.maxDateStr}`;
+    
+    if (perksHer) {
+      perksHer.innerHTML = `Free delivery · Est. Delivery: <strong>${displayRangeStr}</strong>`;
+    }
+    if (perksHim) {
+      perksHim.innerHTML = `Free delivery · Est. Delivery: <strong>${displayRangeStr}</strong>`;
+    }
+    
+    // Update Shipping Policy Modal
+    const policyEst = document.getElementById('policy-delivery-est');
+    if (policyEst) {
+      policyEst.innerHTML = `<span style="font-weight: normal; color: var(--color-text-muted);">(Estimated delivery for an order placed now: <strong>${displayRangeStr}</strong>)</span>`;
+    }
+  }
+
+  // Bind the Pincode checker event listeners
+  function initPincodeChecker() {
+    const pinBtn = document.getElementById('cart-pincode-btn');
+    const pinInput = document.getElementById('cart-pincode-input');
+    const pinResult = document.getElementById('cart-pincode-result');
+    
+    if (!pinBtn || !pinInput || !pinResult) return;
+    
+    pinBtn.addEventListener('click', performPincodeCheck);
+    pinInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        performPincodeCheck();
+      }
+    });
+    
+    function performPincodeCheck() {
+      const pincode = pinInput.value.trim();
+      
+      if (!/^\d{6}$/.test(pincode)) {
+        pinResult.className = 'pincode-result-box error';
+        pinResult.innerHTML = '⚠️ Please enter a valid 6-digit Indian pincode.';
+        pinResult.style.display = 'block';
+        return;
+      }
+      
+      const details = getDistanceDetails(pincode);
+      if (!details) {
+        pinResult.className = 'pincode-result-box error';
+        pinResult.innerHTML = '⚠️ Pincode zone classification failed. Try again.';
+        pinResult.style.display = 'block';
+        return;
+      }
+      
+      const est = calculateDeliveryDates(details.minDays, details.maxDays);
+      
+      pinResult.className = 'pincode-result-box success';
+      pinResult.innerHTML = `
+        <div>📍 <strong>${details.tier}</strong> (${details.approxDist})</div>
+        <div>🚀 Dispatch: <strong>${est.dispatchText}</strong></div>
+        <div>📅 Est. Delivery: <strong>${est.minDateStr} – ${est.maxDateStr}</strong></div>
+      `;
+      pinResult.style.display = 'block';
+    }
+  }
+
+  // Run on load
+  initDefaultDeliveryEstimates();
+  initPincodeChecker();
 
 });
 

@@ -1748,6 +1748,107 @@ button {
   transform: translateY(-2px);
 }
 
+/* ── CART PINCODE CHECKER STYLES ──────────────────────────────────────── */
+.cart-pincode-checker {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 15px;
+}
+
+.pincode-label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pincode-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pincode-input-row input {
+  flex-grow: 1;
+  padding: 10px 14px;
+  border: 1px solid rgba(18, 18, 18, 0.15);
+  border-radius: var(--border-radius-sm);
+  font-size: 1.3rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.pincode-input-row input:focus {
+  border-color: var(--color-accent-purple);
+  box-shadow: 0 0 0 3px rgba(109, 56, 139, 0.1);
+}
+
+.pincode-input-row button {
+  padding: 10px 20px;
+  background-color: var(--color-text-primary);
+  color: var(--color-text-white);
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.pincode-input-row button:hover {
+  background-color: var(--color-accent-purple);
+}
+
+.pincode-result-box {
+  display: none;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: var(--border-radius-sm);
+  padding: 12px;
+  animation: pincodeFadeIn 0.3s ease forwards;
+}
+
+@keyframes pincodeFadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pincode-result-box.success {
+  display: block;
+  background-color: rgba(109, 56, 139, 0.05);
+  border: 1px dashed rgba(109, 56, 139, 0.2);
+  color: var(--color-text-primary);
+}
+
+.pincode-result-box.error {
+  display: block;
+  background-color: rgba(221, 29, 29, 0.05);
+  border: 1px dashed rgba(221, 29, 29, 0.2);
+  color: var(--color-accent-bright-red);
+}
+
+.pincode-result-box strong {
+  font-weight: 700;
+}
+
+.pincode-result-box div {
+  margin-bottom: 4px;
+}
+.pincode-result-box div:last-child {
+  margin-bottom: 0;
+}
+
+.policy-delivery-est {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--color-accent-purple);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
 /* ── FOOTER ───────────────────────────────────────────────────────────── */
 .site-footer {
   background-color: var(--color-bg-dark);
