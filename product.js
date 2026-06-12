@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
       notes: 'Sweet Vanilla · Amber · Spicy Oud',
       price: 849,
       img: 'https://scentgames.in/cdn/shop/files/62_400x400_crop_center.jpg?v=1777812438',
-      url: 'index.html#deals',
+      url: 'product-vanillicious.html',
       tags: 'her vanillicious sweet vanilla amber spicy oud warm perfume extract'
     },
     {
