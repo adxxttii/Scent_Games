@@ -211,9 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pincodeMessage.className = 'pincode-feedback success';
       pincodeMessage.innerHTML = `
         <span class="material-symbols-outlined" style="font-size: 1.4rem; vertical-align: middle; margin-right: 4px;">check_circle</span>
-        Delivery available to <strong>${details.tier}</strong> (${details.approxDist}).<br>
-        🚀 Dispatch: <strong>${est.dispatchText}</strong><br>
-        📅 Est. Delivery: <strong>${est.minDateStr} – ${est.maxDateStr}</strong>
+        Est. Delivery: <strong>${est.minDateStr} – ${est.maxDateStr}</strong>
       `;
     });
 

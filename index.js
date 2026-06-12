@@ -1343,8 +1343,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       pinResult.className = 'pincode-result-box success';
       pinResult.innerHTML = `
-        <div>📍 <strong>${details.tier}</strong> (${details.approxDist})</div>
-        <div>🚀 Dispatch: <strong>${est.dispatchText}</strong></div>
         <div>📅 Est. Delivery: <strong>${est.minDateStr} – ${est.maxDateStr}</strong></div>
       `;
       pinResult.style.display = 'block';
