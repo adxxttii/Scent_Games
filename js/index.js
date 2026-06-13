@@ -1559,7 +1559,20 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       
       div.addEventListener('click', () => {
-        const url = item.url;
+        let url = item.url;
+        const isProductPage = window.location.pathname.includes('/products/');
+        
+        // Adjust url based on page location
+        if (isProductPage) {
+          if (url.startsWith('index.html')) {
+            url = '../' + url;
+          }
+        } else {
+          if (!url.startsWith('index.html')) {
+            url = 'products/' + url;
+          }
+        }
+
         const currentPath = window.location.pathname;
         if (url.startsWith('index.html#') && (currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath === '')) {
           // Already on home page, just scroll to target
