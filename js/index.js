@@ -929,6 +929,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── COLLECTIONS PAGE DYNAMIC FILTER LOGIC ────────────────────────────── */
+  const collectionTabBtns = document.querySelectorAll('.collections-filter-tab-btn');
+  const collectionPageGrid = document.querySelector('.collections-page-grid');
+  const collectionProducts = document.querySelectorAll('.collections-page-grid .product-card');
+  const collectionsTitle = document.getElementById('collections-title');
+
+  if (collectionPageGrid && collectionProducts.length > 0) {
+    function applyCollectionsPageFilter(category) {
+      // 1. Highlight tab button
+      collectionTabBtns.forEach(btn => {
+        if (btn.dataset.filter === category) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // 2. Filter products in the grid
+      collectionProducts.forEach(card => {
+        if (category === 'all' || card.dataset.collection === category) {
+          card.classList.remove('hidden-filter-item');
+          card.classList.add('show-filter-item');
+        } else {
+          card.classList.remove('show-filter-item');
+          card.classList.add('hidden-filter-item');
+        }
+      });
+
+      // 3. Dynamically update title
+      if (collectionsTitle) {
+        if (category === 'him') {
+          collectionsTitle.innerHTML = 'For <span class="title-highlight">Him</span>';
+        } else if (category === 'her') {
+          collectionsTitle.innerHTML = 'For <span class="title-highlight">Her</span>';
+        } else if (category === 'unisex') {
+          collectionsTitle.innerHTML = '<span class="title-highlight">Unisex</span> Collection';
+        } else {
+          collectionsTitle.innerHTML = 'Our <span class="title-highlight">Collections</span>';
+        }
+      }
+
+      // 4. Update URL parameter silently
+      const url = new URL(window.location);
+      url.searchParams.set('collection', category);
+      window.history.pushState({}, '', url);
+    }
+
+    // Bind click events to tabs
+    collectionTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        applyCollectionsPageFilter(btn.dataset.filter);
+      });
+    });
+
+    // Check URL parameters on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialCollection = urlParams.get('collection') || 'all';
+    applyCollectionsPageFilter(initialCollection);
+  }
+
   /* ── SCENT FINDER QUIZ LOGIC ─────────────────────────────────────────── */
   const quizSteps = document.querySelectorAll('.quiz-step');
   const quizProgressFill = document.getElementById('quiz-progress-fill');
